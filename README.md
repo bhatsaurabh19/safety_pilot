@@ -46,7 +46,7 @@ python run_pipeline.py
 - JSON-based ISO input (no PDF parsing required)
 
 📁 FULL PROJECT STRUCTURE
-
+```text
 iso-compliance-agent/
 │
 ├── README.md
@@ -98,3 +98,4 @@ iso-compliance-agent/
 │
 │   └── utils/
 │       └── logger.py
+```
