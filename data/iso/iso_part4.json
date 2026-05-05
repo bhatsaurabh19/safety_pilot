@@ -1,0 +1,27 @@
+{
+  "part": "ISO 26262-4",
+  "name": "Product Development at the System Level",
+  "source": "slide-derived (TÜV training)",
+  "clauses": [
+    {
+      "clause_id": "4.5",
+      "title": "General Topics for Product Development at System Level",
+      "text": "Product development at the system level shall follow a structured lifecycle model. It shall ensure traceability from functional safety requirements to technical safety requirements and system design. The development process shall consider system architecture, interfaces, and integration aspects."
+    },
+    {
+      "clause_id": "4.6",
+      "title": "Technical Safety Concept",
+      "text": "The technical safety concept shall refine the functional safety requirements into technical safety requirements based on system architectural assumptions. It shall define how safety requirements are implemented at system level and ensure that these requirements are consistent with the functional safety concept. The concept shall include system architecture, safety mechanisms, fault detection, and safe state handling."
+    },
+    {
+      "clause_id": "4.7",
+      "title": "System and Item Integration and Testing",
+      "text": "System and item integration and testing shall verify that the implemented system satisfies the technical safety requirements. Integration shall consider hardware and software interactions, interfaces, and system behavior under normal and fault conditions. Testing shall demonstrate that safety mechanisms function as intended."
+    },
+    {
+      "clause_id": "4.8",
+      "title": "Safety Validation",
+      "text": "Safety validation shall confirm that the item achieves the intended safety goals in the target environment. Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "part": "ISO 26262-3",
+  "name": "Concept Phase",
+  "source": "slide-derived (TÜV training)",
+  "clauses": [
+    {
+      "clause_id": "3.5",
+      "title": "Item Definition",
+      "text": "The item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development. It shall define the system elements, operational environment, and interactions with external systems. The item definition serves as the basis for hazard analysis and risk assessment."
+    },
+    {
+      "clause_id": "3.6",
+      "title": "Hazard Analysis and Risk Assessment (HARA)",
+      "text": "A hazard analysis and risk assessment shall be performed to identify hazardous events and classify them based on severity, exposure, and controllability. The combination of these factors determines the Automotive Safety Integrity Level (ASIL). Safety goals shall be derived from hazardous events and assigned appropriate ASILs."
+    },
+    {
+      "clause_id": "3.7",
+      "title": "Functional Safety Concept",
+      "text": "The functional safety concept shall define the functional safety requirements derived from safety goals. It shall specify safety measures and system-level functions required to achieve or maintain a safe state. The concept shall ensure consistency with the item definition and provide traceability to safety goals."
+    }
+  ]
+}

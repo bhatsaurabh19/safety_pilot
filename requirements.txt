@@ -1,0 +1,29 @@
+# Core
+numpy
+pandas
+
+# PDF processing
+pymupdf
+
+# DOCX processing
+python-docx
+
+# OCR (for scanned PDFs)
+pytesseract
+Pillow
+
+# Embeddings
+sentence-transformers
+torch
+
+# Vector database
+faiss-cpu
+
+# LLM communication
+requests
+
+# Utilities
+tqdm
+
+pyyaml
+ollama
