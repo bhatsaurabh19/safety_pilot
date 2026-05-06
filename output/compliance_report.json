@@ -1,8 +1,185 @@
 {
-  "total_clauses": 4,
-  "compliant": 0,
-  "partial": 4,
-  "non_compliant": 0,
-  "not_applicable": 0,
-  "overall_score": 0.0
+  "summary": {
+    "overall_status": "NON_COMPLIANT",
+    "overall_score": 0.3571,
+    "total_clauses": 7,
+    "compliant": 0,
+    "partial": 5,
+    "non_compliant": 2,
+    "not_applicable": 0
+  },
+  "top_gaps": [
+    {
+      "gap": "LLM returned invalid JSON",
+      "count": 2
+    },
+    {
+      "gap": "L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t",
+      "count": 1
+    }
+  ],
+  "top_recommendations": [
+    {
+      "recommendation": "Review prompt and model behavior",
+      "count": 2
+    },
+    {
+      "recommendation": "A d d c l a u s e s p r e s e n t i n g H A R A",
+      "count": 1
+    }
+  ],
+  "clause_results": [
+    {
+      "clause_id": "3.5",
+      "status": "PARTIAL",
+      "confidence": 0.0,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [
+        "item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development.",
+        "defines the system elements, operational environment, and interactions with external systems.",
+        "serves as the basis for hazard analysis and risk assessment."
+      ],
+      "gaps": [],
+      "recommendations": []
+    },
+    {
+      "clause_id": "3.6",
+      "status": "PARTIAL",
+      "confidence": 0.5,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "FULL",
+        "evidence_quality": "IMPLICIT",
+        "correctness": "PARTIAL",
+        "traceability": "PARTIAL"
+      },
+      "evidence": [
+        "H A R A",
+        "A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)",
+        "A S I L d e t e r m i n e d u s i n g H A R A"
+      ],
+      "gaps": [
+        "L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t"
+      ],
+      "recommendations": [
+        "A d d c l a u s e s p r e s e n t i n g H A R A"
+      ]
+    },
+    {
+      "clause_id": "3.7",
+      "status": "PARTIAL",
+      "confidence": 0.5,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [
+        "h",
+        "s",
+        "o",
+        "r",
+        "g",
+        "]",
+        "roa",
+        "d",
+        "saf",
+        "ety-",
+        "-",
+        "ds",
+        "ss.",
+        "."
+      ],
+      "gaps": [],
+      "recommendations": []
+    },
+    {
+      "clause_id": "4.5",
+      "status": "PARTIAL",
+      "confidence": 0.0,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [
+        "s",
+        "c",
+        "e",
+        "n",
+        "a",
+        "r",
+        "i",
+        "o"
+      ],
+      "gaps": [],
+      "recommendations": []
+    },
+    {
+      "clause_id": "4.6",
+      "status": "NON_COMPLIANT",
+      "confidence": 0.0,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [],
+      "gaps": [
+        "LLM returned invalid JSON"
+      ],
+      "recommendations": [
+        "Review prompt and model behavior"
+      ]
+    },
+    {
+      "clause_id": "4.7",
+      "status": "NON_COMPLIANT",
+      "confidence": 0.0,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [],
+      "gaps": [
+        "LLM returned invalid JSON"
+      ],
+      "recommendations": [
+        "Review prompt and model behavior"
+      ]
+    },
+    {
+      "clause_id": "4.8",
+      "status": "PARTIAL",
+      "confidence": 0.5,
+      "evaluation": {
+        "presence": "NO",
+        "coverage": "NONE",
+        "evidence_quality": "NONE",
+        "correctness": "MISALIGNED",
+        "traceability": "MISSING"
+      },
+      "evidence": [
+        "safety validation shall confirm that the item achieves the intended safety goals in the target environment.",
+        "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions."
+      ],
+      "gaps": [],
+      "recommendations": []
+    }
+  ]
 }

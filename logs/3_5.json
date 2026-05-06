@@ -1,0 +1,75 @@
+{
+  "clause_id": "3.5",
+  "retrieval": {
+    "chunks": [
+      {
+        "id": "chunk_40",
+        "text": "item, malfunction, scenario, and hazardous event,\n\n\u2022 \na defined link from malfunction \u2192 scenario \u2192 hazardous event \u2192 S/E/C \u2192 ASIL,\n\n\u2022 \nexplicit rationale text for each classification,\n\n\u2022 \ndocument-level assumptions that can be version-controlled,\n\n\u2022 \na reusable scenario catalog for future consistency, and",
+        "score": 0.6316,
+        "metadata": {
+          "chunk_id": "chunk_40",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_1",
+        "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
+        "score": 0.6004,
+        "metadata": {
+          "chunk_id": "chunk_1",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_0",
+        "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
+        "score": 0.5919,
+        "metadata": {
+          "chunk_id": "chunk_0",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_22",
+        "text": "me in \nthe analyzed scenario is used for Severity.\n\n5) HARA Worksheet (Traceable Hazard Log) \nLegend: \nMB = malfunctioning behavior ID \nHE = hazardous event ID \nOS = operational situation ID \nASIL derived using the ISO 26262 S/E/C risk matrix concept. [iso26262guide.com], \n[en.wikipedia.org]",
+        "score": 0.5776,
+        "metadata": {
+          "chunk_id": "chunk_22",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_19",
+        "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
+        "score": 0.5719,
+        "metadata": {
+          "chunk_id": "chunk_19",
+          "source": "input_chunks.json"
+        }
+      }
+    ],
+    "avg_score": 0.5947,
+    "retrieval_confidence": "MEDIUM"
+  },
+  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 3.5\n- Title: Item Definition\n- Description: The item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development. It shall define the system elements, operational environment, and interactions with external systems. The item definition serves as the basis for hazard analysis and risk assessment.\n\nRetrieved Evidence from Document:\ni\nt\ne\nm\n,\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n,\n \ns\nc\ne\nn\na\nr\ni\no\n,\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n,\n\n\n\n\n\u2022\n \n\n\na\n \nd\ne\nf\ni\nn\ne\nd\n \nl\ni\nn\nk\n \nf\nr\no\nm\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \n\u2192\n \ns\nc\ne\nn\na\nr\ni\no\n \n\u2192\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \n\u2192\n \nS\n/\nE\n/\nC\n \n\u2192\n \nA\nS\nI\nL\n,\n\n\n\n\n\u2022\n \n\n\ne\nx\np\nl\ni\nc\ni\nt\n \nr\na\nt\ni\no\nn\na\nl\ne\n \nt\ne\nx\nt\n \nf\no\nr\n \ne\na\nc\nh\n \nc\nl\na\ns\ns\ni\nf\ni\nc\na\nt\ni\no\nn\n,\n\n\n\n\n\u2022\n \n\n\nd\no\nc\nu\nm\ne\nn\nt\n-\nl\ne\nv\ne\nl\n \na\ns\ns\nu\nm\np\nt\ni\no\nn\ns\n \nt\nh\na\nt\n \nc\na\nn\n \nb\ne\n \nv\ne\nr\ns\ni\no\nn\n-\nc\no\nn\nt\nr\no\nl\nl\ne\nd\n,\n\n\n\n\n\u2022\n \n\n\na\n \nr\ne\nu\ns\na\nb\nl\ne\n \ns\nc\ne\nn\na\nr\ni\no\n \nc\na\nt\na\nl\no\ng\n \nf\no\nr\n \nf\nu\nt\nu\nr\ne\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n,\n \na\nn\nd\n\n\n\n\nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\n1\n)\n \nD\no\nc\nu\nm\ne\nn\nt\n \nC\no\nn\nt\nr\no\nl\n \n/\n \nT\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nH\ne\na\nd\ne\nr\n\n\n\n\n\u2022\n \n\n\nI\nt\ne\nm\n \nR\ne\nv\ni\ns\ni\no\nn\n \nR\ne\nf\ne\nr\ne\nn\nc\ne\nd\n:\n \nR\ne\nv\n \nA\n \n(\nb\na\ns\ne\nd\n \no\nn\n \np\nr\ne\nv\ni\no\nu\ns\nl\ny\n \nd\ne\nf\ni\nn\ne\nd\n \nA\nE\nB\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n)\n\n\n\n\n\u2022\n \n\n\nA\nn\na\nl\ny\ns\ni\ns\n \nL\ne\nv\ne\nl\n:\n \nV\ne\nh\ni\nc\nl\ne\n-\nl\ne\nv\ne\nl\n \n/\n \nI\nt\ne\nm\n-\nl\ne\nv\ne\nl\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \na\nn\na\nl\ny\ns\ni\ns\n\n\n\n\n\u2022\n \n\n\nS\nt\na\nt\nu\ns\n:\n \nP\nr\ne\nl\ni\nm\ni\nn\na\nr\ny\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nH\nA\nR\nA\n\n\n\n\nH\na\nz\na\nr\nd\n \nA\nn\na\nl\ny\ns\ni\ns\n \na\nn\nd\n \nR\ni\ns\nk\n \nA\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \n(\nH\nA\nR\nA\n)\n \n\n\nI\nt\ne\nm\n:\n \nA\nu\nt\no\nn\no\nm\no\nu\ns\n \nE\nm\ne\nr\ng\ne\nn\nc\ny\n \nB\nr\na\nk\ni\nn\ng\n \n(\nA\nE\nB\n)\n \nS\ny\ns\nt\ne\nm\n \n\n\nS\nt\na\nn\nd\na\nr\nd\n \nc\no\nn\nt\ne\nx\nt\n:\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n-\n3\n \nc\no\nn\nc\ne\np\nt\n \np\nh\na\ns\ne\n \nH\nA\nR\nA\n,\n \ns\nt\nr\nu\nc\nt\nu\nr\ne\nd\n \nf\no\nr\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \n\n\nr\ne\np\ne\na\nt\na\nb\ni\nl\ni\nt\ny\n,\n \na\nn\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ne\nx\np\ne\nc\nt\ne\nd\n \ni\nn\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \n/\n \nA\nS\nP\nI\nC\nE\n \n\n\ne\nn\nv\ni\nr\no\nn\nm\ne\nn\nt\ns\n.\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \ng\nu\ni\nd\na\nn\nc\ne\n \ne\nx\np\nl\ni\nc\ni\nt\nl\ny\n \ne\nm\np\nh\na\ns\ni\nz\ne\ns\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n \na\nn\nd\n \n\n\nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \nd\no\nc\nu\nm\ne\nn\nt\ne\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \np\nr\no\nc\ne\ns\ns\ne\ns\n,\n \na\nn\nd\n \no\nb\nj\ne\nc\nt\ni\nv\ne\n \ne\nv\ni\nd\ne\nn\nc\ne\n/\nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n \n\n\nm\na\nn\na\ng\ne\nm\ne\nn\nt\n \nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\nm\ne\n \ni\nn\n \n\n\nt\nh\ne\n \na\nn\na\nl\ny\nz\ne\nd\n \ns\nc\ne\nn\na\nr\ni\no\n \ni\ns\n \nu\ns\ne\nd\n \nf\no\nr\n \nS\ne\nv\ne\nr\ni\nt\ny\n.\n\n\n\n\n5\n)\n \nH\nA\nR\nA\n \nW\no\nr\nk\ns\nh\ne\ne\nt\n \n(\nT\nr\na\nc\ne\na\nb\nl\ne\n \nH\na\nz\na\nr\nd\n \nL\no\ng\n)\n \n\n\nL\ne\ng\ne\nn\nd\n:\n \n\n\nM\nB\n \n=\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nb\ne\nh\na\nv\ni\no\nr\n \nI\nD\n \n\n\nH\nE\n \n=\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \nI\nD\n \n\n\nO\nS\n \n=\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \ns\ni\nt\nu\na\nt\ni\no\nn\n \nI\nD\n \n\n\nA\nS\nI\nL\n \nd\ne\nr\ni\nv\ne\nd\n \nu\ns\ni\nn\ng\n \nt\nh\ne\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nS\n/\nE\n/\nC\n \nr\ni\ns\nk\n \nm\na\nt\nr\ni\nx\n \nc\no\nn\nc\ne\np\nt\n.\n \n[\ni\ns\no\n2\n6\n2\n6\n2\ng\nu\ni\nd\ne\n.\nc\no\nm\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\ns\n.\n.\n.\n.\na\nt\ni\no\nn\ns\n.\ng\no\nv\n]\n,\n \n[\ni\ni\nh\ns\n.\no\nr\ng\n]\n,\n \n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\n\n\nd\ns\ns\n.\ne\nu\n]\n\n\n\n\n2\n.\n \nT\nh\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \nd\no\nm\na\ni\nn\n \ni\nn\nc\nl\nu\nd\ne\ns\n \nu\nr\nb\na\nn\n,\n \ns\nu\nb\nu\nr\nb\na\nn\n,\n \nr\nu\nr\na\nl\n,\n \na\nn\nd\n \nh\ni\ng\nh\nw\na\ny\n \n\n\nf\no\nr\nw\na\nr\nd\n-\nd\nr\ni\nv\ni\nn\ng\n \nu\ns\ne\n,\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nt\n \nw\ni\nt\nh\n \nt\nh\ne\n \ne\na\nr\nl\ni\ne\nr\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n \na\nn\nd\n \nc\no\nm\nm\no\nn\n \nA\nE\nB\n \nu\ns\ne\n \n\n\nc\no\nn\nt\ne\nx\nt\ns\n.\n\n\n\n\n3\n.\n \nE\nx\np\no\ns\nu\nr\ne\n \ni\ns\n \nj\nu\nd\ng\ne\nd\n \nf\nr\no\nm\n \nv\ne\nh\ni\nc\nl\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \nu\ns\ne\n,\n \nn\no\nt\n \nf\nr\no\nm\n \nf\na\ni\nl\nu\nr\ne\n \nr\na\nt\ne\n.\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"3.5\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
+  "raw_response": "{\n  \"clause_id\": \"3.5\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [\n    [\n      \"item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development.\"\n    ],\n    [\n      \"defines the system elements, operational environment, and interactions with external systems.\"\n    ],\n    [\n      \"serves as the basis for hazard analysis and risk assessment.\"\n    ]\n  ],\n  \"gaps\": [],\n  \"recommendations\": []\n}",
+  "validated_result": {
+    "clause_id": "3.5",
+    "status": "PARTIAL",
+    "confidence": 0.0,
+    "evaluation": {
+      "presence": "NO",
+      "coverage": "NONE",
+      "evidence_quality": "NONE",
+      "correctness": "MISALIGNED",
+      "traceability": "MISSING"
+    },
+    "evidence": [
+      "item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development.",
+      "defines the system elements, operational environment, and interactions with external systems.",
+      "serves as the basis for hazard analysis and risk assessment."
+    ],
+    "gaps": [],
+    "recommendations": []
+  }
+}

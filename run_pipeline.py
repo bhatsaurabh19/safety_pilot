@@ -56,8 +56,10 @@ def main():
     # -----------------------------
     # 2. Load ISO clauses
     # -----------------------------
-    iso_clauses = load_iso_clauses("data/iso/iso_part4.json")
-    print(f"📘 Loaded {len(iso_clauses)} ISO clauses")
+    iso_part3 = load_iso_clauses("data/iso/iso_part3.json")
+    iso_part4 = load_iso_clauses("data/iso/iso_part4.json")
+    iso_clauses = iso_part3 + iso_part4
+    print(f"📘 Loaded {len(iso_clauses)} ISO clauses "f"(Part 3: {len(iso_part3)}, Part 4: {len(iso_part4)})")
 
     # -----------------------------
     # 3. Load document (chunks)
@@ -82,7 +84,19 @@ def main():
     dim = len(embeddings[0])
     store = FAISSStore(dim)
 
-    store.add(embeddings, doc_chunks)
+    metadata = [
+        {
+            "chunk_id": f"chunk_{i}",
+            "source": "input_chunks.json"
+        }
+        for i in range(len(doc_chunks))
+    ]
+
+    store.add(
+        embeddings=embeddings,
+        texts=doc_chunks,
+        metadatas=metadata
+    )
 
     # -----------------------------
     # 6. Retriever

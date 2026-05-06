@@ -1,0 +1,74 @@
+{
+  "clause_id": "4.8",
+  "retrieval": {
+    "chunks": [
+      {
+        "id": "chunk_19",
+        "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
+        "score": 0.6158,
+        "metadata": {
+          "chunk_id": "chunk_19",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_30",
+        "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
+        "score": 0.5958,
+        "metadata": {
+          "chunk_id": "chunk_30",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_1",
+        "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
+        "score": 0.5917,
+        "metadata": {
+          "chunk_id": "chunk_1",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_29",
+        "text": "ous \nevent is equivalent to \nthe relevant no-brake\n\nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nbecomes \nimminent \ncase in the same \nscenario. Because AEB \nis assessed in those \ncommon forward \ncollision contexts, the \nseverity/exposure/contr\nollability remain high. \n[downloads....ations.go\nv], [iihs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]",
+        "score": 0.59,
+        "metadata": {
+          "chunk_id": "chunk_29",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_38",
+        "text": "tatistics. [roadsafety-dss.eu], [en.wikipedia.org]\n\n7.3 Lower but Still Safety-Relevant Events \nExcessive urban braking was judged ASIL B in this draft because the expected operating \nspeeds and residual controllability are generally better than for highway false braking, \nalthough injury/crash risk still remains safety-relevant. [motodemy.com], \n[link.springer.com], [en.wikipedia.org]",
+        "score": 0.5743,
+        "metadata": {
+          "chunk_id": "chunk_38",
+          "source": "input_chunks.json"
+        }
+      }
+    ],
+    "avg_score": 0.5935,
+    "retrieval_confidence": "MEDIUM"
+  },
+  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 4.8\n- Title: Safety Validation\n- Description: Safety validation shall confirm that the item achieves the intended safety goals in the target environment. Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.\n\nRetrieved Evidence from Document:\ns\n.\n.\n.\n.\na\nt\ni\no\nn\ns\n.\ng\no\nv\n]\n,\n \n[\ni\ni\nh\ns\n.\no\nr\ng\n]\n,\n \n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\n\n\nd\ns\ns\n.\ne\nu\n]\n\n\n\n\n2\n.\n \nT\nh\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \nd\no\nm\na\ni\nn\n \ni\nn\nc\nl\nu\nd\ne\ns\n \nu\nr\nb\na\nn\n,\n \ns\nu\nb\nu\nr\nb\na\nn\n,\n \nr\nu\nr\na\nl\n,\n \na\nn\nd\n \nh\ni\ng\nh\nw\na\ny\n \n\n\nf\no\nr\nw\na\nr\nd\n-\nd\nr\ni\nv\ni\nn\ng\n \nu\ns\ne\n,\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nt\n \nw\ni\nt\nh\n \nt\nh\ne\n \ne\na\nr\nl\ni\ne\nr\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n \na\nn\nd\n \nc\no\nm\nm\no\nn\n \nA\nE\nB\n \nu\ns\ne\n \n\n\nc\no\nn\nt\ne\nx\nt\ns\n.\n\n\n\n\n3\n.\n \nE\nx\np\no\ns\nu\nr\ne\n \ni\ns\n \nj\nu\nd\ng\ne\nd\n \nf\nr\no\nm\n \nv\ne\nh\ni\nc\nl\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \nu\ns\ne\n,\n \nn\no\nt\n \nf\nr\no\nm\n \nf\na\ni\nl\nu\nr\ne\n \nr\na\nt\ne\n.\n\n\n\n\nh\ns\n.\no\nr\ng\n]\n,\n \n\n\n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\nd\ns\ns\n.\ne\nu\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n6\n)\n \nC\no\nn\ns\no\nl\ni\nd\na\nt\ne\nd\n \nH\na\nz\na\nr\nd\n \nL\ni\ns\nt\n \nb\ny\n \nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nB\ne\nh\na\nv\ni\no\nr\n \n\n\nT\nh\ni\ns\n \ns\ne\nc\nt\ni\no\nn\n \nh\ne\nl\np\ns\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \nt\ne\na\nm\ns\n \nm\na\ni\nn\nt\na\ni\nn\n \no\nn\ne\n-\nt\no\n-\nm\na\nn\ny\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nb\ne\nt\nw\ne\ne\nn\n \n\n\nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \nc\nl\na\ns\ns\ne\ns\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\ns\n,\n \nw\nh\ni\nc\nh\n \ni\ns\n \nu\ns\ne\nf\nu\nl\n \nf\no\nr\n \nb\no\nt\nh\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nw\no\nr\nk\n \n\n\np\nr\no\nd\nu\nc\nt\ns\n \na\nn\nd\n \nA\nS\nP\nI\nC\nE\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ns\nt\nr\nu\nc\nt\nu\nr\ni\nn\ng\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n \n\n\nM\nB\n-\n0\n1\n:\n \nN\no\n \na\nu\nt\no\nn\no\nm\no\nu\ns\n \nb\nr\na\nk\ni\nn\ng\n \nw\nh\ne\nn\n \nb\nr\na\nk\ni\nn\ng\n \ni\ns\n \nr\ne\nq\nu\ni\nr\ne\nd\n\n\n\n\nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\n1\n)\n \nD\no\nc\nu\nm\ne\nn\nt\n \nC\no\nn\nt\nr\no\nl\n \n/\n \nT\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nH\ne\na\nd\ne\nr\n\n\n\n\n\u2022\n \n\n\nI\nt\ne\nm\n \nR\ne\nv\ni\ns\ni\no\nn\n \nR\ne\nf\ne\nr\ne\nn\nc\ne\nd\n:\n \nR\ne\nv\n \nA\n \n(\nb\na\ns\ne\nd\n \no\nn\n \np\nr\ne\nv\ni\no\nu\ns\nl\ny\n \nd\ne\nf\ni\nn\ne\nd\n \nA\nE\nB\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n)\n\n\n\n\n\u2022\n \n\n\nA\nn\na\nl\ny\ns\ni\ns\n \nL\ne\nv\ne\nl\n:\n \nV\ne\nh\ni\nc\nl\ne\n-\nl\ne\nv\ne\nl\n \n/\n \nI\nt\ne\nm\n-\nl\ne\nv\ne\nl\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \na\nn\na\nl\ny\ns\ni\ns\n\n\n\n\n\u2022\n \n\n\nS\nt\na\nt\nu\ns\n:\n \nP\nr\ne\nl\ni\nm\ni\nn\na\nr\ny\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nH\nA\nR\nA\n\n\n\n\no\nu\ns\n \n\n\ne\nv\ne\nn\nt\n \ni\ns\n \ne\nq\nu\ni\nv\na\nl\ne\nn\nt\n \nt\no\n \n\n\nt\nh\ne\n \nr\ne\nl\ne\nv\na\nn\nt\n \nn\no\n-\nb\nr\na\nk\ne\n\n\n\n\nH\nE\n \n\n\nI\nD\n \n\n\nS\no\nu\nr\n\n\nc\ne\n \n\n\nM\nB\n \n\n\nI\nD\n \n\n\nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\n\n\nn\ng\n \nB\ne\nh\na\nv\ni\no\nr\n \n\n\nO\np\ne\nr\na\nt\ni\no\n\n\nn\na\nl\n \n\n\nS\ni\nt\nu\na\nt\ni\no\n\n\nn\n \n/\n \n\n\nS\nc\ne\nn\na\nr\ni\n\n\no\n \n\n\nH\na\nz\na\nr\nd\no\nu\ns\n \n\n\nE\nv\ne\nn\nt\n \n\n\nD\ne\ns\nc\nr\ni\np\nt\ni\no\nn\n \n\n\nP\no\nt\ne\nn\nt\ni\na\nl\n \n\n\nH\na\nr\nm\n \n\n\nS\n \nE\n \nC\n \nR\ne\ns\nu\nl\nt\ni\nn\ng\n \n\n\nA\nS\nI\nL\n \n\n\nJ\nu\ns\nt\ni\nf\ni\nc\na\nt\ni\no\nn\n \n(\nt\nr\na\nc\ne\na\nb\nl\ne\n \n\n\nr\na\nt\ni\no\nn\na\nl\ne\n)\n \n\n\nb\ne\nc\no\nm\ne\ns\n \n\n\ni\nm\nm\ni\nn\ne\nn\nt\n \n\n\nc\na\ns\ne\n \ni\nn\n \nt\nh\ne\n \ns\na\nm\ne\n \n\n\ns\nc\ne\nn\na\nr\ni\no\n.\n \nB\ne\nc\na\nu\ns\ne\n \nA\nE\nB\n \n\n\ni\ns\n \na\ns\ns\ne\ns\ns\ne\nd\n \ni\nn\n \nt\nh\no\ns\ne\n \n\n\nc\no\nm\nm\no\nn\n \nf\no\nr\nw\na\nr\nd\n \n\n\nc\no\nl\nl\ni\ns\ni\no\nn\n \nc\no\nn\nt\ne\nx\nt\ns\n,\n \nt\nh\ne\n \n\n\ns\ne\nv\ne\nr\ni\nt\ny\n/\ne\nx\np\no\ns\nu\nr\ne\n/\nc\no\nn\nt\nr\n\n\no\nl\nl\na\nb\ni\nl\ni\nt\ny\n \nr\ne\nm\na\ni\nn\n \nh\ni\ng\nh\n.\n \n\n\n[\nd\no\nw\nn\nl\no\na\nd\ns\n.\n.\n.\n.\na\nt\ni\no\nn\ns\n.\ng\no\n\n\nv\n]\n,\n \n[\ni\ni\nh\ns\n.\no\nr\ng\n]\n,\n \n\n\n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\nd\ns\ns\n.\ne\nu\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\nt\na\nt\ni\ns\nt\ni\nc\ns\n.\n \n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\nd\ns\ns\n.\ne\nu\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n7\n.\n3\n \nL\no\nw\ne\nr\n \nb\nu\nt\n \nS\nt\ni\nl\nl\n \nS\na\nf\ne\nt\ny\n-\nR\ne\nl\ne\nv\na\nn\nt\n \nE\nv\ne\nn\nt\ns\n \n\n\nE\nx\nc\ne\ns\ns\ni\nv\ne\n \nu\nr\nb\na\nn\n \nb\nr\na\nk\ni\nn\ng\n \nw\na\ns\n \nj\nu\nd\ng\ne\nd\n \nA\nS\nI\nL\n \nB\n \ni\nn\n \nt\nh\ni\ns\n \nd\nr\na\nf\nt\n \nb\ne\nc\na\nu\ns\ne\n \nt\nh\ne\n \ne\nx\np\ne\nc\nt\ne\nd\n \no\np\ne\nr\na\nt\ni\nn\ng\n \n\n\ns\np\ne\ne\nd\ns\n \na\nn\nd\n \nr\ne\ns\ni\nd\nu\na\nl\n \nc\no\nn\nt\nr\no\nl\nl\na\nb\ni\nl\ni\nt\ny\n \na\nr\ne\n \ng\ne\nn\ne\nr\na\nl\nl\ny\n \nb\ne\nt\nt\ne\nr\n \nt\nh\na\nn\n \nf\no\nr\n \nh\ni\ng\nh\nw\na\ny\n \nf\na\nl\ns\ne\n \nb\nr\na\nk\ni\nn\ng\n,\n \n\n\na\nl\nt\nh\no\nu\ng\nh\n \ni\nn\nj\nu\nr\ny\n/\nc\nr\na\ns\nh\n \nr\ni\ns\nk\n \ns\nt\ni\nl\nl\n \nr\ne\nm\na\ni\nn\ns\n \ns\na\nf\ne\nt\ny\n-\nr\ne\nl\ne\nv\na\nn\nt\n.\n \n[\nm\no\nt\no\nd\ne\nm\ny\n.\nc\no\nm\n]\n,\n \n\n\n[\nl\ni\nn\nk\n.\ns\np\nr\ni\nn\ng\ne\nr\n.\nc\no\nm\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"4.8\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
+  "raw_response": "{\n  \"clause_id\": \"4.8\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.5,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [\n    [\n      \"safety validation shall confirm that the item achieves the intended safety goals in the target environment.\"\n    ],\n    [\n      \"Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.\"\n    ]\n  ],\n  \"gaps\": [\n    {\n      \"description\": \"Lack of explicit evidence for validation at vehicle level\",\n      \"location\": \"Coverage\"\n    },\n    {\n      \"description\": \"Inadequate evidence for ensuring system fulfillment of functional safety requirements\",\n      \"location\": \"Correctness\"\n    }\n  ],\n  \"recommendations\": [\n    {\n      \"description\": \"Provide explicit evidence for validation at vehicle level\",\n      \"location\": \"Evidence Quality\"\n    },\n    {\n      \"description\": \"Enhance evidence to ensure system fulfillment of functional safety requirements\",\n      \"location\": \"Correctness\"\n    }\n  ]\n}",
+  "validated_result": {
+    "clause_id": "4.8",
+    "status": "PARTIAL",
+    "confidence": 0.5,
+    "evaluation": {
+      "presence": "NO",
+      "coverage": "NONE",
+      "evidence_quality": "NONE",
+      "correctness": "MISALIGNED",
+      "traceability": "MISSING"
+    },
+    "evidence": [
+      "safety validation shall confirm that the item achieves the intended safety goals in the target environment.",
+      "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions."
+    ],
+    "gaps": [],
+    "recommendations": []
+  }
+}

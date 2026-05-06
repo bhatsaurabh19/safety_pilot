@@ -52,6 +52,7 @@ iso-compliance-agent/
 ├── README.md
 ├── requirements.txt
 ├── run_pipeline.py
+├── ingest_document.py          ← NEW
 │
 ├── config/
 │   └── config.yaml
@@ -62,40 +63,41 @@ iso-compliance-agent/
 │   │   └── iso_part4.json
 │   │
 │   └── documents/
-│       └── sample_doc_chunks.json
+│       ├── sample_doc_chunks.json
+│       └── input_chunks.json   ← GENERATED (after running ingest_document.py)
+│
+├── input/                      ← NEW (drop your PDF/DOCX/TXT files here)
+│   └── your_document.pdf
 │
 ├── src/
-│
 │   ├── config/
 │   │   └── loader.py
-│
 │   ├── embeddings/
 │   │   ├── base.py
 │   │   └── ollama_embeddings.py
-│
 │   ├── llm/
 │   │   ├── base.py
 │   │   └── ollama_llm.py
-│
 │   ├── ingestion/
 │   │   ├── extractor.py
 │   │   ├── cleaner.py
 │   │   └── chunker.py
-│
 │   ├── vectorstore/
 │   │   └── faiss_store.py
-│
 │   ├── retrieval/
 │   │   └── retriever.py
-│
 │   ├── evaluation/
 │   │   ├── evaluator.py
 │   │   ├── prompt_builder.py
 │   │   └── schema.py
-│
 │   ├── aggregation/
 │   │   └── aggregator.py
-│
 │   └── utils/
 │       └── logger.py
+│
+└── output/                     ← NEW (auto-created by pipeline)
+    └── compliance_report.json
 ```
+
+python ingest_document.py --input input/your_document.pdf --chunk_size 400 --overlap 50
+python run_pipeline.py

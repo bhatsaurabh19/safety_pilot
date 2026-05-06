@@ -2,16 +2,18 @@ import re
 
 
 def clean_text(text: str) -> str:
-    # Remove multiple spaces
-    text = re.sub(r"\s+", " ", text)
 
-    # Fix broken lines
-    text = text.replace("\n", " ")
+    # Normalize line endings
+    text = text.replace("\r\n", "\n")
+    text = text.replace("\r", "\n")
 
-    # Remove page numbers (simple heuristic)
+    # Remove excessive spaces but preserve line structure
+    text = re.sub(r"[ \t]+", " ", text)
+
+    # Remove excessive blank lines
+    text = re.sub(r"\n{3,}", "\n\n", text)
+
+    # Remove simple page markers
     text = re.sub(r"\bPage \d+\b", "", text)
-
-    # Remove repeated headers (basic)
-    text = re.sub(r"ISO\s*26262.*?\d{4}", "", text)
 
     return text.strip()

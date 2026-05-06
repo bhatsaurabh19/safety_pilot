@@ -24,13 +24,7 @@ class SchemaValidator:
         "traceability": str,
     }
 
-    VALID_STATUS = {
-        "COMPLIANT",
-        "PARTIAL",
-        "NON_COMPLIANT",
-        "NOT_APPLICABLE",
-    }
-
+    VALID_STATUS = {"COMPLIANT", "PARTIAL", "NON_COMPLIANT", "NOT_APPLICABLE"}
     VALID_PRESENCE = {"YES", "NO"}
     VALID_COVERAGE = {"FULL", "PARTIAL", "NONE"}
     VALID_EVIDENCE_QUALITY = {"EXPLICIT", "IMPLICIT", "WEAK", "NONE"}
@@ -38,49 +32,33 @@ class SchemaValidator:
     VALID_TRACEABILITY = {"CLEAR", "PARTIAL", "MISSING"}
 
     def validate(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Strict validation:
-        - No missing fields
-        - No extra fields
-        - Exact enum values
-        - Type enforcement
-        """
-
         self._validate_top_level(data)
+        data["status"] = data["status"].strip().upper()
         self._validate_status(data["status"])
+        data["confidence"] = max(0.0,min(1.0, float(data["confidence"])))
         self._validate_confidence(data["confidence"])
         self._validate_evaluation(data["evaluation"])
         self._validate_string_list(data["evidence"], "evidence")
         self._validate_string_list(data["gaps"], "gaps")
         self._validate_string_list(data["recommendations"], "recommendations")
+        return data
 
-        return data  # validated, no modification
-
-    # -----------------------------
-    # Top-level validation
-    # -----------------------------
     def _validate_top_level(self, data: Dict[str, Any]):
         if not isinstance(data, dict):
             raise SchemaValidationError("Output must be a JSON object")
 
-        # Missing fields
         for field, expected_type in self.REQUIRED_TOP_LEVEL_FIELDS.items():
             if field not in data:
                 raise SchemaValidationError(f"Missing field: {field}")
-
             if not isinstance(data[field], expected_type):
                 raise SchemaValidationError(
                     f"Invalid type for '{field}', expected {expected_type}, got {type(data[field])}"
                 )
 
-        # Extra fields
         extra_fields = set(data.keys()) - set(self.REQUIRED_TOP_LEVEL_FIELDS.keys())
         if extra_fields:
             raise SchemaValidationError(f"Unexpected fields: {extra_fields}")
 
-    # -----------------------------
-    # Field validators
-    # -----------------------------
     def _validate_status(self, status: str):
         if status not in self.VALID_STATUS:
             raise SchemaValidationError(f"Invalid status: {status}")
@@ -93,43 +71,34 @@ class SchemaValidator:
         if not isinstance(evaluation, dict):
             raise SchemaValidationError("Evaluation must be an object")
 
-        # Missing fields
         for field, expected_type in self.REQUIRED_EVALUATION_FIELDS.items():
             if field not in evaluation:
                 raise SchemaValidationError(f"Missing evaluation field: {field}")
-
             if not isinstance(evaluation[field], expected_type):
-                raise SchemaValidationError(
-                    f"Invalid type for evaluation.{field}"
-                )
+                raise SchemaValidationError(f"Invalid type for evaluation.{field}")
 
-        # Extra fields
+        # Normalize to uppercase before enum checks
+        for field in self.REQUIRED_EVALUATION_FIELDS:
+            evaluation[field] = evaluation[field].strip().upper()
+
         extra_fields = set(evaluation.keys()) - set(self.REQUIRED_EVALUATION_FIELDS.keys())
         if extra_fields:
             raise SchemaValidationError(f"Unexpected evaluation fields: {extra_fields}")
 
-        # Enum checks
         if evaluation["presence"] not in self.VALID_PRESENCE:
-            raise SchemaValidationError("Invalid presence value")
-
+            raise SchemaValidationError(f"Invalid presence value: {evaluation['presence']}")
         if evaluation["coverage"] not in self.VALID_COVERAGE:
-            raise SchemaValidationError("Invalid coverage value")
-
+            raise SchemaValidationError(f"Invalid coverage value: {evaluation['coverage']}")
         if evaluation["evidence_quality"] not in self.VALID_EVIDENCE_QUALITY:
-            raise SchemaValidationError("Invalid evidence_quality value")
-
+            raise SchemaValidationError(f"Invalid evidence_quality value: {evaluation['evidence_quality']}")
         if evaluation["correctness"] not in self.VALID_CORRECTNESS:
-            raise SchemaValidationError("Invalid correctness value")
-
+            raise SchemaValidationError(f"Invalid correctness value: {evaluation['correctness']}")
         if evaluation["traceability"] not in self.VALID_TRACEABILITY:
-            raise SchemaValidationError("Invalid traceability value")
+            raise SchemaValidationError(f"Invalid traceability value: {evaluation['traceability']}")
 
     def _validate_string_list(self, value: List[Any], field_name: str):
         if not isinstance(value, list):
             raise SchemaValidationError(f"{field_name} must be a list")
-
         for i, item in enumerate(value):
             if not isinstance(item, str):
-                raise SchemaValidationError(
-                    f"{field_name}[{i}] must be a string"
-                )
+                raise SchemaValidationError(f"{field_name}[{i}] must be a string")

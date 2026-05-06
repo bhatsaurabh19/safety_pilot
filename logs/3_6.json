@@ -1,0 +1,79 @@
+{
+  "clause_id": "3.6",
+  "retrieval": {
+    "chunks": [
+      {
+        "id": "chunk_0",
+        "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
+        "score": 0.7189,
+        "metadata": {
+          "chunk_id": "chunk_0",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_22",
+        "text": "me in \nthe analyzed scenario is used for Severity.\n\n5) HARA Worksheet (Traceable Hazard Log) \nLegend: \nMB = malfunctioning behavior ID \nHE = hazardous event ID \nOS = operational situation ID \nASIL derived using the ISO 26262 S/E/C risk matrix concept. [iso26262guide.com], \n[en.wikipedia.org]",
+        "score": 0.6872,
+        "metadata": {
+          "chunk_id": "chunk_22",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_2",
+        "text": "nalysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA\n\n\u2022 \nMethod: Malfunctioning behavior \u2192 Hazardous event (hazard + operational \nsituation) \u2192 S/E/C classification \u2192 ASIL determination. The distinction between \nhazard, hazardous event, and operational situation is a core HARA principle in ISO \n26262 concept-phase work. [waltercons...g-fusa.com], [en.wikipedia.org]",
+        "score": 0.6731,
+        "metadata": {
+          "chunk_id": "chunk_2",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_23",
+        "text": "concept. [iso26262guide.com], \n[en.wikipedia.org]\n\n5.1 Hazardous Events and ASIL Determination \nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nHE\n-\nAE\nMB-\n01 \nAEB fails to \nissue \nbraking \nwhen a \nOS-01 \nVehicle \ncontinues at \nhighway \nspeed \nHigh-energy \nrear-end \ncrash \ninvolving \nS\n3 \nE\n4 \nC\n3 ASIL D \nS3: Highway rear-end \ninto a stopped queue \ncan credibly cause life-\nthreatening/fatal injury.",
+        "score": 0.6514,
+        "metadata": {
+          "chunk_id": "chunk_23",
+          "source": "input_chunks.json"
+        }
+      },
+      {
+        "id": "chunk_5",
+        "text": "product aligned to the requested HARA-only scope.\n\n2) Rating Conventions Used \nISO 26262 HARA determines ASIL using Severity (S), Exposure (E), and Controllability (C). \nPublic summaries of ISO 26262 consistently describe the rating classes as S0\u2013S3, E0\u2013E4, \nand C0\u2013C3, with ASIL then derived from the standard decision matrix. \n[iso26262guide.com], [en.wikipedia.org]",
+        "score": 0.6458,
+        "metadata": {
+          "chunk_id": "chunk_5",
+          "source": "input_chunks.json"
+        }
+      }
+    ],
+    "avg_score": 0.6753,
+    "retrieval_confidence": "MEDIUM"
+  },
+  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 3.6\n- Title: Hazard Analysis and Risk Assessment (HARA)\n- Description: A hazard analysis and risk assessment shall be performed to identify hazardous events and classify them based on severity, exposure, and controllability. The combination of these factors determines the Automotive Safety Integrity Level (ASIL). Safety goals shall be derived from hazardous events and assigned appropriate ASILs.\n\nRetrieved Evidence from Document:\nH\na\nz\na\nr\nd\n \nA\nn\na\nl\ny\ns\ni\ns\n \na\nn\nd\n \nR\ni\ns\nk\n \nA\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \n(\nH\nA\nR\nA\n)\n \n\n\nI\nt\ne\nm\n:\n \nA\nu\nt\no\nn\no\nm\no\nu\ns\n \nE\nm\ne\nr\ng\ne\nn\nc\ny\n \nB\nr\na\nk\ni\nn\ng\n \n(\nA\nE\nB\n)\n \nS\ny\ns\nt\ne\nm\n \n\n\nS\nt\na\nn\nd\na\nr\nd\n \nc\no\nn\nt\ne\nx\nt\n:\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n-\n3\n \nc\no\nn\nc\ne\np\nt\n \np\nh\na\ns\ne\n \nH\nA\nR\nA\n,\n \ns\nt\nr\nu\nc\nt\nu\nr\ne\nd\n \nf\no\nr\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \n\n\nr\ne\np\ne\na\nt\na\nb\ni\nl\ni\nt\ny\n,\n \na\nn\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ne\nx\np\ne\nc\nt\ne\nd\n \ni\nn\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \n/\n \nA\nS\nP\nI\nC\nE\n \n\n\ne\nn\nv\ni\nr\no\nn\nm\ne\nn\nt\ns\n.\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \ng\nu\ni\nd\na\nn\nc\ne\n \ne\nx\np\nl\ni\nc\ni\nt\nl\ny\n \ne\nm\np\nh\na\ns\ni\nz\ne\ns\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n \na\nn\nd\n \n\n\nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \nd\no\nc\nu\nm\ne\nn\nt\ne\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \np\nr\no\nc\ne\ns\ns\ne\ns\n,\n \na\nn\nd\n \no\nb\nj\ne\nc\nt\ni\nv\ne\n \ne\nv\ni\nd\ne\nn\nc\ne\n/\nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n \n\n\nm\na\nn\na\ng\ne\nm\ne\nn\nt\n \nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\nm\ne\n \ni\nn\n \n\n\nt\nh\ne\n \na\nn\na\nl\ny\nz\ne\nd\n \ns\nc\ne\nn\na\nr\ni\no\n \ni\ns\n \nu\ns\ne\nd\n \nf\no\nr\n \nS\ne\nv\ne\nr\ni\nt\ny\n.\n\n\n\n\n5\n)\n \nH\nA\nR\nA\n \nW\no\nr\nk\ns\nh\ne\ne\nt\n \n(\nT\nr\na\nc\ne\na\nb\nl\ne\n \nH\na\nz\na\nr\nd\n \nL\no\ng\n)\n \n\n\nL\ne\ng\ne\nn\nd\n:\n \n\n\nM\nB\n \n=\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nb\ne\nh\na\nv\ni\no\nr\n \nI\nD\n \n\n\nH\nE\n \n=\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \nI\nD\n \n\n\nO\nS\n \n=\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \ns\ni\nt\nu\na\nt\ni\no\nn\n \nI\nD\n \n\n\nA\nS\nI\nL\n \nd\ne\nr\ni\nv\ne\nd\n \nu\ns\ni\nn\ng\n \nt\nh\ne\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nS\n/\nE\n/\nC\n \nr\ni\ns\nk\n \nm\na\nt\nr\ni\nx\n \nc\no\nn\nc\ne\np\nt\n.\n \n[\ni\ns\no\n2\n6\n2\n6\n2\ng\nu\ni\nd\ne\n.\nc\no\nm\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\nn\na\nl\ny\ns\ni\ns\n\n\n\n\n\u2022\n \n\n\nS\nt\na\nt\nu\ns\n:\n \nP\nr\ne\nl\ni\nm\ni\nn\na\nr\ny\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nH\nA\nR\nA\n\n\n\n\n\u2022\n \n\n\nM\ne\nt\nh\no\nd\n:\n \nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nb\ne\nh\na\nv\ni\no\nr\n \n\u2192\n \nH\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \n(\nh\na\nz\na\nr\nd\n \n+\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \n\n\ns\ni\nt\nu\na\nt\ni\no\nn\n)\n \n\u2192\n \nS\n/\nE\n/\nC\n \nc\nl\na\ns\ns\ni\nf\ni\nc\na\nt\ni\no\nn\n \n\u2192\n \nA\nS\nI\nL\n \nd\ne\nt\ne\nr\nm\ni\nn\na\nt\ni\no\nn\n.\n \nT\nh\ne\n \nd\ni\ns\nt\ni\nn\nc\nt\ni\no\nn\n \nb\ne\nt\nw\ne\ne\nn\n \n\n\nh\na\nz\na\nr\nd\n,\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n,\n \na\nn\nd\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \ns\ni\nt\nu\na\nt\ni\no\nn\n \ni\ns\n \na\n \nc\no\nr\ne\n \nH\nA\nR\nA\n \np\nr\ni\nn\nc\ni\np\nl\ne\n \ni\nn\n \nI\nS\nO\n \n\n\n2\n6\n2\n6\n2\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nw\no\nr\nk\n.\n \n[\nw\na\nl\nt\ne\nr\nc\no\nn\ns\n.\n.\n.\ng\n-\nf\nu\ns\na\n.\nc\no\nm\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\nc\no\nn\nc\ne\np\nt\n.\n \n[\ni\ns\no\n2\n6\n2\n6\n2\ng\nu\ni\nd\ne\n.\nc\no\nm\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n5\n.\n1\n \nH\na\nz\na\nr\nd\no\nu\ns\n \nE\nv\ne\nn\nt\ns\n \na\nn\nd\n \nA\nS\nI\nL\n \nD\ne\nt\ne\nr\nm\ni\nn\na\nt\ni\no\nn\n \n\n\nH\nE\n \n\n\nI\nD\n \n\n\nS\no\nu\nr\n\n\nc\ne\n \n\n\nM\nB\n \n\n\nI\nD\n \n\n\nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\n\n\nn\ng\n \nB\ne\nh\na\nv\ni\no\nr\n \n\n\nO\np\ne\nr\na\nt\ni\no\n\n\nn\na\nl\n \n\n\nS\ni\nt\nu\na\nt\ni\no\n\n\nn\n \n/\n \n\n\nS\nc\ne\nn\na\nr\ni\n\n\no\n \n\n\nH\na\nz\na\nr\nd\no\nu\ns\n \n\n\nE\nv\ne\nn\nt\n \n\n\nD\ne\ns\nc\nr\ni\np\nt\ni\no\nn\n \n\n\nP\no\nt\ne\nn\nt\ni\na\nl\n \n\n\nH\na\nr\nm\n \n\n\nS\n \nE\n \nC\n \nR\ne\ns\nu\nl\nt\ni\nn\ng\n \n\n\nA\nS\nI\nL\n \n\n\nJ\nu\ns\nt\ni\nf\ni\nc\na\nt\ni\no\nn\n \n(\nt\nr\na\nc\ne\na\nb\nl\ne\n \n\n\nr\na\nt\ni\no\nn\na\nl\ne\n)\n \n\n\nH\nE\n\n\n-\n\n\nA\nE\n\n\nM\nB\n-\n\n\n0\n1\n \n\n\nA\nE\nB\n \nf\na\ni\nl\ns\n \nt\no\n \n\n\ni\ns\ns\nu\ne\n \n\n\nb\nr\na\nk\ni\nn\ng\n \n\n\nw\nh\ne\nn\n \na\n \n\n\nO\nS\n-\n0\n1\n \n\n\nV\ne\nh\ni\nc\nl\ne\n \n\n\nc\no\nn\nt\ni\nn\nu\ne\ns\n \na\nt\n \n\n\nh\ni\ng\nh\nw\na\ny\n \n\n\ns\np\ne\ne\nd\n \n\n\nH\ni\ng\nh\n-\ne\nn\ne\nr\ng\ny\n \n\n\nr\ne\na\nr\n-\ne\nn\nd\n \n\n\nc\nr\na\ns\nh\n \n\n\ni\nn\nv\no\nl\nv\ni\nn\ng\n \n\n\nS\n\n\n3\n \n\n\nE\n\n\n4\n \n\n\nC\n\n\n3\n \nA\nS\nI\nL\n \nD\n \n\n\nS\n3\n:\n \nH\ni\ng\nh\nw\na\ny\n \nr\ne\na\nr\n-\ne\nn\nd\n \n\n\ni\nn\nt\no\n \na\n \ns\nt\no\np\np\ne\nd\n \nq\nu\ne\nu\ne\n \n\n\nc\na\nn\n \nc\nr\ne\nd\ni\nb\nl\ny\n \nc\na\nu\ns\ne\n \nl\ni\nf\ne\n-\n\n\nt\nh\nr\ne\na\nt\ne\nn\ni\nn\ng\n/\nf\na\nt\na\nl\n \ni\nn\nj\nu\nr\ny\n.\n\n\n\n\np\nr\no\nd\nu\nc\nt\n \na\nl\ni\ng\nn\ne\nd\n \nt\no\n \nt\nh\ne\n \nr\ne\nq\nu\ne\ns\nt\ne\nd\n \nH\nA\nR\nA\n-\no\nn\nl\ny\n \ns\nc\no\np\ne\n.\n\n\n\n\n2\n)\n \nR\na\nt\ni\nn\ng\n \nC\no\nn\nv\ne\nn\nt\ni\no\nn\ns\n \nU\ns\ne\nd\n \n\n\nI\nS\nO\n \n2\n6\n2\n6\n2\n \nH\nA\nR\nA\n \nd\ne\nt\ne\nr\nm\ni\nn\ne\ns\n \nA\nS\nI\nL\n \nu\ns\ni\nn\ng\n \nS\ne\nv\ne\nr\ni\nt\ny\n \n(\nS\n)\n,\n \nE\nx\np\no\ns\nu\nr\ne\n \n(\nE\n)\n,\n \na\nn\nd\n \nC\no\nn\nt\nr\no\nl\nl\na\nb\ni\nl\ni\nt\ny\n \n(\nC\n)\n.\n \n\n\nP\nu\nb\nl\ni\nc\n \ns\nu\nm\nm\na\nr\ni\ne\ns\n \no\nf\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nt\nl\ny\n \nd\ne\ns\nc\nr\ni\nb\ne\n \nt\nh\ne\n \nr\na\nt\ni\nn\ng\n \nc\nl\na\ns\ns\ne\ns\n \na\ns\n \nS\n0\n\u2013\nS\n3\n,\n \nE\n0\n\u2013\nE\n4\n,\n \n\n\na\nn\nd\n \nC\n0\n\u2013\nC\n3\n,\n \nw\ni\nt\nh\n \nA\nS\nI\nL\n \nt\nh\ne\nn\n \nd\ne\nr\ni\nv\ne\nd\n \nf\nr\no\nm\n \nt\nh\ne\n \ns\nt\na\nn\nd\na\nr\nd\n \nd\ne\nc\ni\ns\ni\no\nn\n \nm\na\nt\nr\ni\nx\n.\n \n\n\n[\ni\ns\no\n2\n6\n2\n6\n2\ng\nu\ni\nd\ne\n.\nc\no\nm\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"3.6\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
+  "raw_response": "{\n  \"clause_id\": \"3.6\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.5,\n  \"evaluation\": {\n    \"presence\": \"NO\",\n    \"coverage\": \"FULL\",\n    \"evidence_quality\": \"IMPLICIT\",\n    \"correctness\": \"PARTIAL\",\n    \"traceability\": \"PARTIAL\"\n  },\n  \"evidence\": [\n    \"H A R A\",\n    \"A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)\",\n    \"A S I L d e t e r m i n e d u s i n g H A R A\"\n  ],\n  \"gaps\": [\n    \"L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t\"\n  ],\n  \"recommendations\": [\n    \"A d d c l a u s e s p r e s e n t i n g H A R A\"\n  ]\n}",
+  "validated_result": {
+    "clause_id": "3.6",
+    "status": "PARTIAL",
+    "confidence": 0.5,
+    "evaluation": {
+      "presence": "NO",
+      "coverage": "FULL",
+      "evidence_quality": "IMPLICIT",
+      "correctness": "PARTIAL",
+      "traceability": "PARTIAL"
+    },
+    "evidence": [
+      "H A R A",
+      "A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)",
+      "A S I L d e t e r m i n e d u s i n g H A R A"
+    ],
+    "gaps": [
+      "L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t"
+    ],
+    "recommendations": [
+      "A d d c l a u s e s p r e s e n t i n g H A R A"
+    ]
+  }
+}
