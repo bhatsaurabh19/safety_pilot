@@ -7,8 +7,9 @@
         "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
         "score": 0.5991,
         "metadata": {
+          "chunk_size": 379,
           "chunk_id": "chunk_30",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -16,8 +17,9 @@
         "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
         "score": 0.5827,
         "metadata": {
+          "chunk_size": 300,
           "chunk_id": "chunk_19",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -25,8 +27,9 @@
         "text": "nalysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA\n\n\u2022 \nMethod: Malfunctioning behavior \u2192 Hazardous event (hazard + operational \nsituation) \u2192 S/E/C classification \u2192 ASIL determination. The distinction between \nhazard, hazardous event, and operational situation is a core HARA principle in ISO \n26262 concept-phase work. [waltercons...g-fusa.com], [en.wikipedia.org]",
         "score": 0.5737,
         "metadata": {
+          "chunk_size": 364,
           "chunk_id": "chunk_2",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -34,8 +37,9 @@
         "text": "ous \nevent is equivalent to \nthe relevant no-brake\n\nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nbecomes \nimminent \ncase in the same \nscenario. Because AEB \nis assessed in those \ncommon forward \ncollision contexts, the \nseverity/exposure/contr\nollability remain high. \n[downloads....ations.go\nv], [iihs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]",
         "score": 0.5619,
         "metadata": {
+          "chunk_size": 504,
           "chunk_id": "chunk_29",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -43,8 +47,9 @@
         "text": "item, malfunction, scenario, and hazardous event,\n\n\u2022 \na defined link from malfunction \u2192 scenario \u2192 hazardous event \u2192 S/E/C \u2192 ASIL,\n\n\u2022 \nexplicit rationale text for each classification,\n\n\u2022 \ndocument-level assumptions that can be version-controlled,\n\n\u2022 \na reusable scenario catalog for future consistency, and",
         "score": 0.5583,
         "metadata": {
+          "chunk_size": 306,
           "chunk_id": "chunk_40",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       }
     ],

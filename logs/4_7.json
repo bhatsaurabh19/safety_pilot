@@ -7,8 +7,9 @@
         "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
         "score": 0.5946,
         "metadata": {
+          "chunk_size": 379,
           "chunk_id": "chunk_30",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -16,8 +17,9 @@
         "text": "item, malfunction, scenario, and hazardous event,\n\n\u2022 \na defined link from malfunction \u2192 scenario \u2192 hazardous event \u2192 S/E/C \u2192 ASIL,\n\n\u2022 \nexplicit rationale text for each classification,\n\n\u2022 \ndocument-level assumptions that can be version-controlled,\n\n\u2022 \na reusable scenario catalog for future consistency, and",
         "score": 0.5909,
         "metadata": {
+          "chunk_size": 306,
           "chunk_id": "chunk_40",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -25,8 +27,9 @@
         "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
         "score": 0.5893,
         "metadata": {
+          "chunk_size": 474,
           "chunk_id": "chunk_0",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -34,8 +37,9 @@
         "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
         "score": 0.5803,
         "metadata": {
+          "chunk_size": 293,
           "chunk_id": "chunk_1",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -43,8 +47,9 @@
         "text": "sable scenario catalog for future consistency, and\n\n\u2022 \na consolidated malfunction index to support downstream linkage. \nThis aligns with public Automotive SPICE guidance on consistency/traceability, \nevidence, work product management, and documented assessment processes. \n[vda-qmc.de] \nRecommended traceability fields (for your formal work product) \nIf you later put this into Word or Excel, add the following columns/metadata fields to make \nit audit-friendly:",
         "score": 0.5669,
         "metadata": {
+          "chunk_size": 462,
           "chunk_id": "chunk_41",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       }
     ],

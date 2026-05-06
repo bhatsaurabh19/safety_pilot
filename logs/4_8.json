@@ -7,8 +7,9 @@
         "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
         "score": 0.6158,
         "metadata": {
+          "chunk_size": 300,
           "chunk_id": "chunk_19",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -16,8 +17,9 @@
         "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
         "score": 0.5958,
         "metadata": {
+          "chunk_size": 379,
           "chunk_id": "chunk_30",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -25,8 +27,9 @@
         "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
         "score": 0.5917,
         "metadata": {
+          "chunk_size": 293,
           "chunk_id": "chunk_1",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -34,8 +37,9 @@
         "text": "ous \nevent is equivalent to \nthe relevant no-brake\n\nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nbecomes \nimminent \ncase in the same \nscenario. Because AEB \nis assessed in those \ncommon forward \ncollision contexts, the \nseverity/exposure/contr\nollability remain high. \n[downloads....ations.go\nv], [iihs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]",
         "score": 0.59,
         "metadata": {
+          "chunk_size": 504,
           "chunk_id": "chunk_29",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -43,8 +47,9 @@
         "text": "tatistics. [roadsafety-dss.eu], [en.wikipedia.org]\n\n7.3 Lower but Still Safety-Relevant Events \nExcessive urban braking was judged ASIL B in this draft because the expected operating \nspeeds and residual controllability are generally better than for highway false braking, \nalthough injury/crash risk still remains safety-relevant. [motodemy.com], \n[link.springer.com], [en.wikipedia.org]",
         "score": 0.5743,
         "metadata": {
+          "chunk_size": 388,
           "chunk_id": "chunk_38",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       }
     ],

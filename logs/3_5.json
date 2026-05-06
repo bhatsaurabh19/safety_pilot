@@ -7,8 +7,9 @@
         "text": "item, malfunction, scenario, and hazardous event,\n\n\u2022 \na defined link from malfunction \u2192 scenario \u2192 hazardous event \u2192 S/E/C \u2192 ASIL,\n\n\u2022 \nexplicit rationale text for each classification,\n\n\u2022 \ndocument-level assumptions that can be version-controlled,\n\n\u2022 \na reusable scenario catalog for future consistency, and",
         "score": 0.6316,
         "metadata": {
+          "chunk_size": 306,
           "chunk_id": "chunk_40",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -16,8 +17,9 @@
         "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
         "score": 0.6004,
         "metadata": {
+          "chunk_size": 293,
           "chunk_id": "chunk_1",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -25,8 +27,9 @@
         "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
         "score": 0.5919,
         "metadata": {
+          "chunk_size": 474,
           "chunk_id": "chunk_0",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -34,8 +37,9 @@
         "text": "me in \nthe analyzed scenario is used for Severity.\n\n5) HARA Worksheet (Traceable Hazard Log) \nLegend: \nMB = malfunctioning behavior ID \nHE = hazardous event ID \nOS = operational situation ID \nASIL derived using the ISO 26262 S/E/C risk matrix concept. [iso26262guide.com], \n[en.wikipedia.org]",
         "score": 0.5776,
         "metadata": {
+          "chunk_size": 292,
           "chunk_id": "chunk_22",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       },
       {
@@ -43,8 +47,9 @@
         "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
         "score": 0.5719,
         "metadata": {
+          "chunk_size": 300,
           "chunk_id": "chunk_19",
-          "source": "input_chunks.json"
+          "source_file": "HARA.pdf"
         }
       }
     ],

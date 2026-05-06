@@ -14,7 +14,7 @@
       "count": 2
     },
     {
-      "gap": "L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t",
+      "gap": "L a k e s o f c l a s s i f y i n g t h e p r o c e s s",
       "count": 1
     }
   ],
@@ -24,7 +24,7 @@
       "count": 2
     },
     {
-      "recommendation": "A d d c l a u s e s p r e s e n t i n g H A R A",
+      "recommendation": "C l a s s i f y t h e p r o c e s s u s i n g H A R A",
       "count": 1
     }
   ],
@@ -61,14 +61,13 @@
       },
       "evidence": [
         "H A R A",
-        "A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)",
-        "A S I L d e t e r m i n e d u s i n g H A R A"
+        "A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)"
       ],
       "gaps": [
-        "L a k e s o f c l a u s e s p r e s e n t i n t h d o c u m e n t"
+        "L a k e s o f c l a s s i f y i n g t h e p r o c e s s"
       ],
       "recommendations": [
-        "A d d c l a u s e s p r e s e n t i n g H A R A"
+        "C l a s s i f y t h e p r o c e s s u s i n g H A R A"
       ]
     },
     {
