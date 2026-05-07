@@ -2,15 +2,27 @@ import json
 import time
 from typing import List, Dict, Any
 
+from src.evaluation.evidence import EvidenceAnalyzer
 from src.evaluation.prompt_builder import PromptBuilder
 
 
 class Evaluator:
-    def __init__(self, retriever, llm, schema_validator):
+    def __init__(
+        self,
+        retriever,
+        llm,
+        schema_validator,
+        max_evidence_retries=1,
+        weak_evidence_threshold=0.45,
+    ):
         self.retriever = retriever
         self.llm = llm
         self.schema_validator = schema_validator
         self.prompt_builder = PromptBuilder()
+        self.max_evidence_retries = max_evidence_retries
+        self.evidence_analyzer = EvidenceAnalyzer(
+            weak_threshold=weak_evidence_threshold
+        )
 
     # -------------------------------------------------
     # Normalize inconsistent LLM outputs
@@ -85,6 +97,7 @@ class Evaluator:
                 "clause_id": clause_id,
                 "status": "NON_COMPLIANT",
                 "confidence": 0.0,
+                "evidence_confidence": 0.0,
                 "evaluation": {
                     "presence": "NO",
                     "coverage": "NONE",
@@ -100,6 +113,129 @@ class Evaluator:
                     "Review prompt and model behavior"
                 ]
             }
+
+    def _build_retrieval_queries(
+        self,
+        clause_title: str,
+        clause_text: str,
+    ) -> List[str]:
+        return [
+            f"{clause_title}. {clause_text}",
+            clause_text,
+            clause_title,
+        ]
+
+    def _retrieve_evidence(
+        self,
+        clause_title: str,
+        clause_text: str,
+    ) -> Dict[str, Any]:
+        best_result = None
+        best_analysis = None
+        attempts = []
+
+        queries = self._build_retrieval_queries(clause_title, clause_text)
+        max_attempts = min(len(queries), self.max_evidence_retries + 1)
+
+        for query in queries[:max_attempts]:
+            retrieval_result = self.retriever.get_relevant_chunks(query)
+            retrieval_result = self.evidence_analyzer.rerank(
+                clause_title=clause_title,
+                clause_text=clause_text,
+                retrieval_result=retrieval_result,
+            )
+            analysis = self.evidence_analyzer.analyze(
+                clause_title=clause_title,
+                clause_text=clause_text,
+                retrieval_result=retrieval_result,
+            )
+
+            attempts.append({
+                "query": query,
+                "avg_score": retrieval_result.get("avg_score", 0.0),
+                "retrieval_confidence": retrieval_result.get(
+                    "retrieval_confidence",
+                    "LOW",
+                ),
+                "evidence_confidence": analysis["evidence_confidence"],
+                "weak_evidence": analysis["weak_evidence"],
+                "reasons": analysis["reasons"],
+            })
+
+            if (
+                best_analysis is None
+                or analysis["evidence_confidence"]
+                > best_analysis["evidence_confidence"]
+            ):
+                best_result = retrieval_result
+                best_analysis = analysis
+
+            if not analysis["weak_evidence"]:
+                break
+
+        if best_result is None:
+            best_result = self.retriever._empty_result()
+            best_analysis = self.evidence_analyzer.analyze(
+                clause_title=clause_title,
+                clause_text=clause_text,
+                retrieval_result=best_result,
+            )
+
+        best_result["evidence_analysis"] = best_analysis
+        best_result["retrieval_attempts"] = attempts
+
+        return best_result
+
+    def _apply_evidence_constraints(
+        self,
+        parsed: Dict[str, Any],
+        retrieval_result: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        analysis = retrieval_result.get("evidence_analysis", {})
+        evidence_confidence = float(analysis.get("evidence_confidence", 0.0))
+        parsed["evidence_confidence"] = evidence_confidence
+
+        if retrieval_result.get("retrieval_confidence") == "LOW":
+            parsed["confidence"] = min(parsed["confidence"], 0.4)
+
+        if analysis.get("weak_evidence"):
+            parsed["confidence"] = min(parsed["confidence"], evidence_confidence)
+
+            if parsed.get("status") == "COMPLIANT":
+                parsed["status"] = "PARTIAL"
+
+            reasons = analysis.get("reasons", [])
+            parsed["gaps"].extend(
+                reason for reason in reasons if reason not in parsed["gaps"]
+            )
+
+        evaluation = parsed.get("evaluation", {})
+        missing_or_misaligned = (
+            evaluation.get("presence") == "NO"
+            or evaluation.get("coverage") == "NONE"
+            or evaluation.get("evidence_quality") == "NONE"
+            or evaluation.get("correctness") == "MISALIGNED"
+            or evaluation.get("traceability") == "MISSING"
+        )
+
+        if missing_or_misaligned and parsed.get("status") in {
+            "COMPLIANT",
+            "PARTIAL",
+        }:
+            parsed["status"] = "NON_COMPLIANT"
+            parsed["confidence"] = min(parsed["confidence"], 0.2)
+            gap = "Status downgraded because evaluation fields show missing or misaligned evidence"
+            if gap not in parsed["gaps"]:
+                parsed["gaps"].append(gap)
+
+        if parsed.get("status") == "COMPLIANT" and not parsed.get("evidence"):
+            parsed["status"] = "NON_COMPLIANT"
+            parsed["confidence"] = min(parsed["confidence"], 0.2)
+            gap = "Status downgraded because no supporting evidence was returned"
+            if gap not in parsed["gaps"]:
+                parsed["gaps"].append(gap)
+
+        return parsed
 
     # -------------------------------------------------
     # Audit logging
@@ -145,26 +281,27 @@ class Evaluator:
             clause_title = clause.get("title", "")
             clause_text = clause.get("text", "")
 
-            print(f"\n🔍 Evaluating Clause: {clause_id}")
+            print(f"\nEvaluating Clause: {clause_id}")
 
             try:
                 # -----------------------------------------
                 # Step 1: Retrieval
                 # -----------------------------------------
-                query = f"{clause_title}. {clause_text}"
-
-                retrieval_result = self.retriever.get_relevant_chunks(query)
+                retrieval_result = self._retrieve_evidence(
+                    clause_title=clause_title,
+                    clause_text=clause_text,
+                )
 
                 retrieved_chunks = retrieval_result["chunks"]
 
                 if not retrieved_chunks:
-                    print("⚠️ No evidence retrieved")
+                    print("No evidence retrieved")
 
-                # Convert chunks → text block
-                evidence_text = "\n\n".join([
+                # Convert chunks to a text block.
+                evidence_texts = [
                     chunk["text"]
                     for chunk in retrieved_chunks
-                ])
+                ]
 
                 # -----------------------------------------
                 # Step 2: Build prompt
@@ -173,7 +310,7 @@ class Evaluator:
                     clause_id=clause_id,
                     clause_title=clause_title,
                     clause_text=clause_text,
-                    retrieved_chunks=evidence_text
+                    retrieved_chunks=evidence_texts
                 )
 
                 # -----------------------------------------
@@ -185,7 +322,7 @@ class Evaluator:
 
                 elapsed = round(time.time() - start, 2)
 
-                print(f"⏱️ LLM response time: {elapsed}s")
+                print(f"LLM response time: {elapsed}s")
 
                 # -----------------------------------------
                 # Step 4: Parse JSON
@@ -201,17 +338,12 @@ class Evaluator:
                 parsed = self._normalize_output(parsed)
 
                 # -----------------------------------------
-                # Step 6: Retrieval-aware confidence adjustment
+                # Step 6: Evidence-aware confidence adjustment
                 # -----------------------------------------
-                retrieval_confidence = retrieval_result[
-                    "retrieval_confidence"
-                ]
-
-                if retrieval_confidence == "LOW":
-                    parsed["confidence"] = min(
-                        parsed["confidence"],
-                        0.4
-                    )
+                parsed = self._apply_evidence_constraints(
+                    parsed=parsed,
+                    retrieval_result=retrieval_result,
+                )
 
                 # -----------------------------------------
                 # Step 7: Validate schema
@@ -233,12 +365,13 @@ class Evaluator:
 
             except Exception as e:
 
-                print(f"❌ Clause failed: {clause_id}")
+                print(f"Clause failed: {clause_id}")
 
                 fallback = {
                     "clause_id": clause_id,
                     "status": "NON_COMPLIANT",
                     "confidence": 0.0,
+                    "evidence_confidence": 0.0,
                     "evaluation": {
                         "presence": "NO",
                         "coverage": "NONE",

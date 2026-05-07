@@ -3,78 +3,122 @@
   "retrieval": {
     "chunks": [
       {
-        "id": "chunk_30",
-        "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
-        "score": 0.59,
-        "metadata": {
-          "chunk_size": 379,
-          "chunk_id": "chunk_30",
-          "source_file": "HARA.pdf"
-        }
-      },
-      {
         "id": "chunk_2",
         "text": "nalysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA\n\n\u2022 \nMethod: Malfunctioning behavior \u2192 Hazardous event (hazard + operational \nsituation) \u2192 S/E/C classification \u2192 ASIL determination. The distinction between \nhazard, hazardous event, and operational situation is a core HARA principle in ISO \n26262 concept-phase work. [waltercons...g-fusa.com], [en.wikipedia.org]",
-        "score": 0.5799,
+        "score": 0.5921,
         "metadata": {
           "chunk_size": 364,
           "chunk_id": "chunk_2",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.426
       },
       {
-        "id": "chunk_40",
-        "text": "item, malfunction, scenario, and hazardous event,\n\n\u2022 \na defined link from malfunction \u2192 scenario \u2192 hazardous event \u2192 S/E/C \u2192 ASIL,\n\n\u2022 \nexplicit rationale text for each classification,\n\n\u2022 \ndocument-level assumptions that can be version-controlled,\n\n\u2022 \na reusable scenario catalog for future consistency, and",
-        "score": 0.5659,
+        "id": "chunk_38",
+        "text": "tatistics. [roadsafety-dss.eu], [en.wikipedia.org]\n\n7.3 Lower but Still Safety-Relevant Events \nExcessive urban braking was judged ASIL B in this draft because the expected operating \nspeeds and residual controllability are generally better than for highway false braking, \nalthough injury/crash risk still remains safety-relevant. [motodemy.com], \n[link.springer.com], [en.wikipedia.org]",
+        "score": 0.5864,
         "metadata": {
-          "chunk_size": 306,
-          "chunk_id": "chunk_40",
+          "chunk_size": 388,
+          "chunk_id": "chunk_38",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.422
       },
       {
-        "id": "chunk_0",
-        "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
-        "score": 0.5607,
+        "id": "chunk_30",
+        "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
+        "score": 0.6016,
         "metadata": {
-          "chunk_size": 474,
-          "chunk_id": "chunk_0",
+          "chunk_size": 379,
+          "chunk_id": "chunk_30",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.4211
       },
       {
-        "id": "chunk_19",
-        "text": "s....ations.gov], [iihs.org], [roadsafety-\ndss.eu]\n\n2. The intended operational domain includes urban, suburban, rural, and highway \nforward-driving use, consistent with the earlier item definition and common AEB use \ncontexts.\n\n3. Exposure is judged from vehicle intended use, not from failure rate.",
-        "score": 0.5537,
+        "id": "chunk_29",
+        "text": "ous \nevent is equivalent to \nthe relevant no-brake\n\nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nbecomes \nimminent \ncase in the same \nscenario. Because AEB \nis assessed in those \ncommon forward \ncollision contexts, the \nseverity/exposure/contr\nollability remain high. \n[downloads....ations.go\nv], [iihs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]",
+        "score": 0.5959,
         "metadata": {
-          "chunk_size": 300,
-          "chunk_id": "chunk_19",
+          "chunk_size": 504,
+          "chunk_id": "chunk_29",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.4171
+      },
+      {
+        "id": "chunk_9",
+        "text": "n control. [link.springer.com], [en.wikipedia.org]\n\n3) Operational Situations / Driving Scenario Catalog \nThe following scenario IDs are created to support bidirectional traceability from hazardous \nevents back to the analyzed context, which is consistent with ISO 26262 HARA practice and \nASPICE-style evidence expectations. [waltercons...g-fusa.com], [vda-qmc.de]",
+        "score": 0.5781,
+        "metadata": {
+          "chunk_size": 365,
+          "chunk_id": "chunk_9",
+          "source_file": "HARA.pdf"
+        },
+        "rerank_score": 0.4162
       }
     ],
-    "avg_score": 0.57,
-    "retrieval_confidence": "MEDIUM"
+    "avg_score": 0.5908,
+    "retrieval_confidence": "MEDIUM",
+    "evidence_analysis": {
+      "evidence_confidence": 0.4205,
+      "weak_evidence": true,
+      "reasons": [
+        "Low evidence confidence"
+      ]
+    },
+    "retrieval_attempts": [
+      {
+        "query": "Technical Safety Concept. The technical safety concept shall refine the functional safety requirements into technical safety requirements based on system architectural assumptions. It shall define how safety requirements are implemented at system level and ensure that these requirements are consistent with the functional safety concept. The concept shall include system architecture, safety mechanisms, fault detection, and safe state handling.",
+        "avg_score": 0.57,
+        "retrieval_confidence": "MEDIUM",
+        "evidence_confidence": 0.4129,
+        "weak_evidence": true,
+        "reasons": [
+          "Low evidence confidence"
+        ]
+      },
+      {
+        "query": "The technical safety concept shall refine the functional safety requirements into technical safety requirements based on system architectural assumptions. It shall define how safety requirements are implemented at system level and ensure that these requirements are consistent with the functional safety concept. The concept shall include system architecture, safety mechanisms, fault detection, and safe state handling.",
+        "avg_score": 0.5787,
+        "retrieval_confidence": "MEDIUM",
+        "evidence_confidence": 0.419,
+        "weak_evidence": true,
+        "reasons": [
+          "Low evidence confidence"
+        ]
+      },
+      {
+        "query": "Technical Safety Concept",
+        "avg_score": 0.5908,
+        "retrieval_confidence": "MEDIUM",
+        "evidence_confidence": 0.4205,
+        "weak_evidence": true,
+        "reasons": [
+          "Low evidence confidence"
+        ]
+      }
+    ]
   },
-  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 4.6\n- Title: Technical Safety Concept\n- Description: The technical safety concept shall refine the functional safety requirements into technical safety requirements based on system architectural assumptions. It shall define how safety requirements are implemented at system level and ensure that these requirements are consistent with the functional safety concept. The concept shall include system architecture, safety mechanisms, fault detection, and safe state handling.\n\nRetrieved Evidence from Document:\nh\ns\n.\no\nr\ng\n]\n,\n \n\n\n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\nd\ns\ns\n.\ne\nu\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n6\n)\n \nC\no\nn\ns\no\nl\ni\nd\na\nt\ne\nd\n \nH\na\nz\na\nr\nd\n \nL\ni\ns\nt\n \nb\ny\n \nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nB\ne\nh\na\nv\ni\no\nr\n \n\n\nT\nh\ni\ns\n \ns\ne\nc\nt\ni\no\nn\n \nh\ne\nl\np\ns\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \nt\ne\na\nm\ns\n \nm\na\ni\nn\nt\na\ni\nn\n \no\nn\ne\n-\nt\no\n-\nm\na\nn\ny\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nb\ne\nt\nw\ne\ne\nn\n \n\n\nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \nc\nl\na\ns\ns\ne\ns\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\ns\n,\n \nw\nh\ni\nc\nh\n \ni\ns\n \nu\ns\ne\nf\nu\nl\n \nf\no\nr\n \nb\no\nt\nh\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nw\no\nr\nk\n \n\n\np\nr\no\nd\nu\nc\nt\ns\n \na\nn\nd\n \nA\nS\nP\nI\nC\nE\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ns\nt\nr\nu\nc\nt\nu\nr\ni\nn\ng\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n \n\n\nM\nB\n-\n0\n1\n:\n \nN\no\n \na\nu\nt\no\nn\no\nm\no\nu\ns\n \nb\nr\na\nk\ni\nn\ng\n \nw\nh\ne\nn\n \nb\nr\na\nk\ni\nn\ng\n \ni\ns\n \nr\ne\nq\nu\ni\nr\ne\nd\n\n\n\n\nn\na\nl\ny\ns\ni\ns\n\n\n\n\n\u2022\n \n\n\nS\nt\na\nt\nu\ns\n:\n \nP\nr\ne\nl\ni\nm\ni\nn\na\nr\ny\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nH\nA\nR\nA\n\n\n\n\n\u2022\n \n\n\nM\ne\nt\nh\no\nd\n:\n \nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nb\ne\nh\na\nv\ni\no\nr\n \n\u2192\n \nH\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \n(\nh\na\nz\na\nr\nd\n \n+\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \n\n\ns\ni\nt\nu\na\nt\ni\no\nn\n)\n \n\u2192\n \nS\n/\nE\n/\nC\n \nc\nl\na\ns\ns\ni\nf\ni\nc\na\nt\ni\no\nn\n \n\u2192\n \nA\nS\nI\nL\n \nd\ne\nt\ne\nr\nm\ni\nn\na\nt\ni\no\nn\n.\n \nT\nh\ne\n \nd\ni\ns\nt\ni\nn\nc\nt\ni\no\nn\n \nb\ne\nt\nw\ne\ne\nn\n \n\n\nh\na\nz\na\nr\nd\n,\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n,\n \na\nn\nd\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \ns\ni\nt\nu\na\nt\ni\no\nn\n \ni\ns\n \na\n \nc\no\nr\ne\n \nH\nA\nR\nA\n \np\nr\ni\nn\nc\ni\np\nl\ne\n \ni\nn\n \nI\nS\nO\n \n\n\n2\n6\n2\n6\n2\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nw\no\nr\nk\n.\n \n[\nw\na\nl\nt\ne\nr\nc\no\nn\ns\n.\n.\n.\ng\n-\nf\nu\ns\na\n.\nc\no\nm\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\ni\nt\ne\nm\n,\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n,\n \ns\nc\ne\nn\na\nr\ni\no\n,\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n,\n\n\n\n\n\u2022\n \n\n\na\n \nd\ne\nf\ni\nn\ne\nd\n \nl\ni\nn\nk\n \nf\nr\no\nm\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \n\u2192\n \ns\nc\ne\nn\na\nr\ni\no\n \n\u2192\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \n\u2192\n \nS\n/\nE\n/\nC\n \n\u2192\n \nA\nS\nI\nL\n,\n\n\n\n\n\u2022\n \n\n\ne\nx\np\nl\ni\nc\ni\nt\n \nr\na\nt\ni\no\nn\na\nl\ne\n \nt\ne\nx\nt\n \nf\no\nr\n \ne\na\nc\nh\n \nc\nl\na\ns\ns\ni\nf\ni\nc\na\nt\ni\no\nn\n,\n\n\n\n\n\u2022\n \n\n\nd\no\nc\nu\nm\ne\nn\nt\n-\nl\ne\nv\ne\nl\n \na\ns\ns\nu\nm\np\nt\ni\no\nn\ns\n \nt\nh\na\nt\n \nc\na\nn\n \nb\ne\n \nv\ne\nr\ns\ni\no\nn\n-\nc\no\nn\nt\nr\no\nl\nl\ne\nd\n,\n\n\n\n\n\u2022\n \n\n\na\n \nr\ne\nu\ns\na\nb\nl\ne\n \ns\nc\ne\nn\na\nr\ni\no\n \nc\na\nt\na\nl\no\ng\n \nf\no\nr\n \nf\nu\nt\nu\nr\ne\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n,\n \na\nn\nd\n\n\n\n\nH\na\nz\na\nr\nd\n \nA\nn\na\nl\ny\ns\ni\ns\n \na\nn\nd\n \nR\ni\ns\nk\n \nA\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \n(\nH\nA\nR\nA\n)\n \n\n\nI\nt\ne\nm\n:\n \nA\nu\nt\no\nn\no\nm\no\nu\ns\n \nE\nm\ne\nr\ng\ne\nn\nc\ny\n \nB\nr\na\nk\ni\nn\ng\n \n(\nA\nE\nB\n)\n \nS\ny\ns\nt\ne\nm\n \n\n\nS\nt\na\nn\nd\na\nr\nd\n \nc\no\nn\nt\ne\nx\nt\n:\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n-\n3\n \nc\no\nn\nc\ne\np\nt\n \np\nh\na\ns\ne\n \nH\nA\nR\nA\n,\n \ns\nt\nr\nu\nc\nt\nu\nr\ne\nd\n \nf\no\nr\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \n\n\nr\ne\np\ne\na\nt\na\nb\ni\nl\ni\nt\ny\n,\n \na\nn\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ne\nx\np\ne\nc\nt\ne\nd\n \ni\nn\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \n/\n \nA\nS\nP\nI\nC\nE\n \n\n\ne\nn\nv\ni\nr\no\nn\nm\ne\nn\nt\ns\n.\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \ng\nu\ni\nd\na\nn\nc\ne\n \ne\nx\np\nl\ni\nc\ni\nt\nl\ny\n \ne\nm\np\nh\na\ns\ni\nz\ne\ns\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n \na\nn\nd\n \n\n\nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \nd\no\nc\nu\nm\ne\nn\nt\ne\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \np\nr\no\nc\ne\ns\ns\ne\ns\n,\n \na\nn\nd\n \no\nb\nj\ne\nc\nt\ni\nv\ne\n \ne\nv\ni\nd\ne\nn\nc\ne\n/\nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n \n\n\nm\na\nn\na\ng\ne\nm\ne\nn\nt\n \nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\ns\n.\n.\n.\n.\na\nt\ni\no\nn\ns\n.\ng\no\nv\n]\n,\n \n[\ni\ni\nh\ns\n.\no\nr\ng\n]\n,\n \n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\n\n\nd\ns\ns\n.\ne\nu\n]\n\n\n\n\n2\n.\n \nT\nh\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \no\np\ne\nr\na\nt\ni\no\nn\na\nl\n \nd\no\nm\na\ni\nn\n \ni\nn\nc\nl\nu\nd\ne\ns\n \nu\nr\nb\na\nn\n,\n \ns\nu\nb\nu\nr\nb\na\nn\n,\n \nr\nu\nr\na\nl\n,\n \na\nn\nd\n \nh\ni\ng\nh\nw\na\ny\n \n\n\nf\no\nr\nw\na\nr\nd\n-\nd\nr\ni\nv\ni\nn\ng\n \nu\ns\ne\n,\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nt\n \nw\ni\nt\nh\n \nt\nh\ne\n \ne\na\nr\nl\ni\ne\nr\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n \na\nn\nd\n \nc\no\nm\nm\no\nn\n \nA\nE\nB\n \nu\ns\ne\n \n\n\nc\no\nn\nt\ne\nx\nt\ns\n.\n\n\n\n\n3\n.\n \nE\nx\np\no\ns\nu\nr\ne\n \ni\ns\n \nj\nu\nd\ng\ne\nd\n \nf\nr\no\nm\n \nv\ne\nh\ni\nc\nl\ne\n \ni\nn\nt\ne\nn\nd\ne\nd\n \nu\ns\ne\n,\n \nn\no\nt\n \nf\nr\no\nm\n \nf\na\ni\nl\nu\nr\ne\n \nr\na\nt\ne\n.\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"4.6\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
-  "raw_response": "{\n  \"clause_id\": \"4.6\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.5,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [\n    [\n      \"h\"\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \"o\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"g\"\n    ],\n    [\n      \"]\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"o\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"d\"\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"f\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"t\"\n    ],\n    [\n      \"y\"\n    ],\n    [\n      \"-\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"d\"\n    ],\n    [\n      \"s\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \".\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"u\"\n    ],\n    [\n      \" \"\n    ],\n    [\n      \"g\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"o\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"d\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"f\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"t\"\n    ],\n    [\n      \"y\"\n    ],\n    [\n      \"-\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"d\"\n    ],\n    [\n      \"s\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \".\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"u\"\n    ],\n    [\n      \" \"\n    ],\n    [\n      \"g\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"i\"\n    ],\n    [\n      \"h\"\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \".\"\n    ],\n    [\n      \"o\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"g\"\n    ]\n    ],\n    [\n      \"-\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"d\"\n    ],\n    [\n      \"s\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \".\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"u\"\n    ],\n    [\n      \" \"\n    ],\n    [\n      \"g\"\n    ]\n    ],\n    [\n      \"-\n\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"o\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"d\n    ],\n    [\n      \"s\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"f\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"t\"\n    ],\n    [\n      \"y\"\n    ],\n    [\n      \"-\"\n    ]\n    ]\n  ],\n  \"gaps\": [],\n  \"recommendations\": []\n}",
+  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 4.6\n- Title: Technical Safety Concept\n- Description: The technical safety concept shall refine the functional safety requirements into technical safety requirements based on system architectural assumptions. It shall define how safety requirements are implemented at system level and ensure that these requirements are consistent with the functional safety concept. The concept shall include system architecture, safety mechanisms, fault detection, and safe state handling.\n\nRetrieved Evidence from Document:\nnalysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA\n\n\u2022 \nMethod: Malfunctioning behavior \u2192 Hazardous event (hazard + operational \nsituation) \u2192 S/E/C classification \u2192 ASIL determination. The distinction between \nhazard, hazardous event, and operational situation is a core HARA principle in ISO \n26262 concept-phase work. [waltercons...g-fusa.com], [en.wikipedia.org]\n\ntatistics. [roadsafety-dss.eu], [en.wikipedia.org]\n\n7.3 Lower but Still Safety-Relevant Events \nExcessive urban braking was judged ASIL B in this draft because the expected operating \nspeeds and residual controllability are generally better than for highway false braking, \nalthough injury/crash risk still remains safety-relevant. [motodemy.com], \n[link.springer.com], [en.wikipedia.org]\n\nhs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required\n\nous \nevent is equivalent to \nthe relevant no-brake\n\nHE \nID \nSour\nce \nMB \nID \nMalfunctioni\nng Behavior \nOperatio\nnal \nSituatio\nn / \nScenari\no \nHazardous \nEvent \nDescription \nPotential \nHarm \nS E C Resulting \nASIL \nJustification (traceable \nrationale) \nbecomes \nimminent \ncase in the same \nscenario. Because AEB \nis assessed in those \ncommon forward \ncollision contexts, the \nseverity/exposure/contr\nollability remain high. \n[downloads....ations.go\nv], [iihs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\nn control. [link.springer.com], [en.wikipedia.org]\n\n3) Operational Situations / Driving Scenario Catalog \nThe following scenario IDs are created to support bidirectional traceability from hazardous \nevents back to the analyzed context, which is consistent with ISO 26262 HARA practice and \nASPICE-style evidence expectations. [waltercons...g-fusa.com], [vda-qmc.de]\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"4.6\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
+  "raw_response": "{\n  \"clause_id\": \"4.6\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.5,\n  \"evaluation\": {\n    \"presence\": \"NO\",\n    \"coverage\": \"FULL\",\n    \"evidence_quality\": \"IMPLICIT\",\n    \"correctness\": \"PARTIAL\",\n    \"traceability\": \"CLEAR\"\n  },\n  \"evidence\": [\n    {\n      \"id\": \"nalysis\",\n      \"status\": \"Preliminary concept-phase HARA\",\n      \"method\": \"Malfunctioning behavior \u2192 Hazardous event (hazard + operational situation) \u2192 S/E/C classification \u2192 ASIL determination.\"\n    }\n  ],\n  \"gaps\": [\n    {\n      \"description\": \"Definition of system architecture, safety mechanisms, fault detection, and safe state handling\"\n    },\n    {\n      \"description\": \"Justification for ASIL determination\"\n    }\n  ],\n  \"recommendations\": [\n    {\n      \"description\": \"Provide explicit definition of system architecture, safety mechanisms, fault detection, and safe state handling.\"\n    },\n    {\n      \"description\": \"Include justification for ASIL determination in the document.\"\n    }\n  ]\n}",
   "validated_result": {
     "clause_id": "4.6",
     "status": "NON_COMPLIANT",
-    "confidence": 0.0,
+    "confidence": 0.2,
     "evaluation": {
       "presence": "NO",
-      "coverage": "NONE",
-      "evidence_quality": "NONE",
-      "correctness": "MISALIGNED",
-      "traceability": "MISSING"
+      "coverage": "FULL",
+      "evidence_quality": "IMPLICIT",
+      "correctness": "PARTIAL",
+      "traceability": "CLEAR"
     },
     "evidence": [],
     "gaps": [
-      "LLM returned invalid JSON"
+      "Low evidence confidence",
+      "Status downgraded because evaluation fields show missing or misaligned evidence"
     ],
-    "recommendations": [
-      "Review prompt and model behavior"
-    ]
+    "recommendations": [],
+    "evidence_confidence": 0.4205
   }
 }

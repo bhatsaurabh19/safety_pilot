@@ -45,4 +45,5 @@ retrieval:
 
 evaluation:
   mode: strict
-
+  evidence_retries: 2
+  weak_evidence_threshold: 0.45

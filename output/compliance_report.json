@@ -1,184 +1,185 @@
 {
   "summary": {
     "overall_status": "NON_COMPLIANT",
-    "overall_score": 0.3571,
+    "overall_score": 0.4286,
     "total_clauses": 7,
-    "compliant": 0,
-    "partial": 5,
-    "non_compliant": 2,
+    "compliant": 2,
+    "partial": 2,
+    "non_compliant": 3,
     "not_applicable": 0
   },
   "top_gaps": [
     {
-      "gap": "LLM returned invalid JSON",
-      "count": 2
+      "gap": "Low evidence confidence",
+      "count": 5
     },
     {
-      "gap": "L a k e s o f c l a s s i f y i n g t h e p r o c e s s",
+      "gap": "Status downgraded because evaluation fields show missing or misaligned evidence",
+      "count": 3
+    },
+    {
+      "gap": "Explicit rationale text for each classification",
+      "count": 1
+    },
+    {
+      "gap": "Document-level assumptions that can be version-controlled",
+      "count": 1
+    },
+    {
+      "gap": "Reusable scenario catalog for future consistency",
       "count": 1
     }
   ],
   "top_recommendations": [
     {
-      "recommendation": "Review prompt and model behavior",
-      "count": 2
-    },
-    {
-      "recommendation": "C l a s s i f y t h e p r o c e s s u s i n g H A R A",
+      "recommendation": "Provide an explicit safety validation process",
       "count": 1
     }
   ],
   "clause_results": [
     {
       "clause_id": "3.5",
-      "status": "PARTIAL",
-      "confidence": 0.0,
+      "status": "COMPLIANT",
+      "confidence": 1.0,
       "evaluation": {
-        "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
-        "traceability": "MISSING"
+        "presence": "YES",
+        "coverage": "FULL",
+        "evidence_quality": "EXPLICIT",
+        "correctness": "ALIGNED",
+        "traceability": "CLEAR"
       },
       "evidence": [
-        "item definition describes the functionality, boundaries, interfaces, and dependencies of the system under development.",
-        "defines the system elements, operational environment, and interactions with external systems.",
-        "serves as the basis for hazard analysis and risk assessment."
+        "Hazard Analysis and Risk Assessment (HARA) Item: Autonomous Emergency Braking (AEB) System",
+        "Document Control / Traceability Header",
+        "HARA Worksheet (Traceable Hazard Log)"
       ],
       "gaps": [],
-      "recommendations": []
+      "recommendations": [],
+      "evidence_confidence": 0.4599
     },
     {
       "clause_id": "3.6",
-      "status": "PARTIAL",
-      "confidence": 0.5,
+      "status": "COMPLIANT",
+      "confidence": 1.0,
+      "evaluation": {
+        "presence": "YES",
+        "coverage": "FULL",
+        "evidence_quality": "EXPLICIT",
+        "correctness": "ALIGNED",
+        "traceability": "CLEAR"
+      },
+      "evidence": [
+        "Automotive SPICE guidance explicitly emphasizes consistency and traceability, documented assessment processes, and objective evidence/work product management to support reproducible assessments.",
+        "Public summaries of ISO 26262 consistently describe the rating classes as S0\u2013S3, E0\u2013E4, and C0\u2013C3, with ASIL then derived from the standard decision matrix.",
+        "ASIL derived using the ISO 26262 S/E/C risk matrix concept."
+      ],
+      "gaps": [],
+      "recommendations": [],
+      "evidence_confidence": 0.5286
+    },
+    {
+      "clause_id": "3.7",
+      "status": "NON_COMPLIANT",
+      "confidence": 0.2,
       "evaluation": {
         "presence": "NO",
         "coverage": "FULL",
         "evidence_quality": "IMPLICIT",
         "correctness": "PARTIAL",
-        "traceability": "PARTIAL"
-      },
-      "evidence": [
-        "H A R A",
-        "A S I L d e r i v e d u s i n g H A R A (ISO 26262-3)"
-      ],
-      "gaps": [
-        "L a k e s o f c l a s s i f y i n g t h e p r o c e s s"
-      ],
-      "recommendations": [
-        "C l a s s i f y t h e p r o c e s s u s i n g H A R A"
-      ]
-    },
-    {
-      "clause_id": "3.7",
-      "status": "PARTIAL",
-      "confidence": 0.5,
-      "evaluation": {
-        "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
         "traceability": "MISSING"
       },
       "evidence": [
-        "h",
-        "s",
-        "o",
-        "r",
-        "g",
-        "]",
-        "roa",
-        "d",
-        "saf",
-        "ety-",
-        "-",
-        "ds",
-        "ss.",
-        "."
+        "hs.org"
       ],
-      "gaps": [],
-      "recommendations": []
+      "gaps": [
+        "Explicit rationale text for each classification",
+        "Document-level assumptions that can be version-controlled",
+        "Reusable scenario catalog for future consistency",
+        "Low evidence confidence",
+        "Status downgraded because evaluation fields show missing or misaligned evidence"
+      ],
+      "recommendations": [],
+      "evidence_confidence": 0.4341
     },
     {
       "clause_id": "4.5",
       "status": "PARTIAL",
-      "confidence": 0.0,
+      "confidence": 0.4332,
       "evaluation": {
-        "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
-        "traceability": "MISSING"
+        "presence": "YES",
+        "coverage": "FULL",
+        "evidence_quality": "EXPLICIT",
+        "correctness": "ALIGNED",
+        "traceability": "CLEAR"
       },
-      "evidence": [
-        "s",
-        "c",
-        "e",
-        "n",
-        "a",
-        "r",
-        "i",
-        "o"
+      "evidence": [],
+      "gaps": [
+        "Low evidence confidence"
       ],
-      "gaps": [],
-      "recommendations": []
+      "recommendations": [],
+      "evidence_confidence": 0.4332
     },
     {
       "clause_id": "4.6",
       "status": "NON_COMPLIANT",
-      "confidence": 0.0,
+      "confidence": 0.2,
       "evaluation": {
         "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
-        "traceability": "MISSING"
+        "coverage": "FULL",
+        "evidence_quality": "IMPLICIT",
+        "correctness": "PARTIAL",
+        "traceability": "CLEAR"
       },
       "evidence": [],
       "gaps": [
-        "LLM returned invalid JSON"
+        "Low evidence confidence",
+        "Status downgraded because evaluation fields show missing or misaligned evidence"
       ],
-      "recommendations": [
-        "Review prompt and model behavior"
-      ]
+      "recommendations": [],
+      "evidence_confidence": 0.4205
     },
     {
       "clause_id": "4.7",
-      "status": "NON_COMPLIANT",
-      "confidence": 0.0,
+      "status": "PARTIAL",
+      "confidence": 0.4234,
       "evaluation": {
-        "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
-        "traceability": "MISSING"
+        "presence": "YES",
+        "coverage": "FULL",
+        "evidence_quality": "EXPLICIT",
+        "correctness": "ALIGNED",
+        "traceability": "CLEAR"
       },
       "evidence": [],
       "gaps": [
-        "LLM returned invalid JSON"
+        "Low evidence confidence"
       ],
-      "recommendations": [
-        "Review prompt and model behavior"
-      ]
+      "recommendations": [],
+      "evidence_confidence": 0.4234
     },
     {
       "clause_id": "4.8",
-      "status": "PARTIAL",
-      "confidence": 0.5,
+      "status": "NON_COMPLIANT",
+      "confidence": 0.2,
       "evaluation": {
         "presence": "NO",
-        "coverage": "NONE",
-        "evidence_quality": "NONE",
-        "correctness": "MISALIGNED",
-        "traceability": "MISSING"
+        "coverage": "FULL",
+        "evidence_quality": "IMPLICIT",
+        "correctness": "ALIGNED",
+        "traceability": "CLEAR"
       },
       "evidence": [
-        "safety validation shall confirm that the item achieves the intended safety goals in the target environment.",
-        "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions."
+        "https://s....ations.gov",
+        "https://iihs.org",
+        "https://roadsafety-dss.eu"
       ],
-      "gaps": [],
-      "recommendations": []
+      "gaps": [
+        "Low evidence confidence",
+        "Status downgraded because evaluation fields show missing or misaligned evidence"
+      ],
+      "recommendations": [
+        "Provide an explicit safety validation process"
+      ],
+      "evidence_confidence": 0.4474
     }
   ]
 }

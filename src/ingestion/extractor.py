@@ -41,28 +41,28 @@ def is_text_usable(text: str) -> bool:
 
 def extract_text(file_path: str) -> str:
     if file_path.endswith(".pdf"):
-        print("🔍 Trying PyMuPDF...")
+        print("Trying PyMuPDF...")
         text = extract_with_pymupdf(file_path)
 
         if is_text_usable(text):
-            print("✅ PyMuPDF extraction successful")
+            print("PyMuPDF extraction successful")
             return text
 
-        print("⚠️ PyMuPDF weak, switching to pdfplumber...")
+        print("PyMuPDF weak, switching to pdfplumber...")
         text = extract_with_pdfplumber(file_path)
 
         if is_text_usable(text):
-            print("✅ pdfplumber extraction successful")
+            print("pdfplumber extraction successful")
             return text
 
-        print("❌ Extraction failed (no OCR fallback yet)")
+        print("Extraction failed (no OCR fallback yet)")
         return text
 
     elif file_path.endswith(".docx"):
         return extract_text_from_docx(file_path)
 
     elif file_path.endswith(".txt"):
-        print("📄 Reading TXT file...")
+        print("Reading TXT file...")
         return extract_text_from_txt(file_path)
 
     else:

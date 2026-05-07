@@ -11,6 +11,7 @@ class SchemaValidator:
         "status": str,
         "confidence": (int, float),
         "evaluation": dict,
+        "evidence_confidence": (int, float),
         "evidence": list,
         "gaps": list,
         "recommendations": list,
@@ -35,12 +36,17 @@ class SchemaValidator:
         self._validate_top_level(data)
         data["status"] = data["status"].strip().upper()
         self._validate_status(data["status"])
-        data["confidence"] = max(0.0,min(1.0, float(data["confidence"])))
+        data["confidence"] = max(0.0, min(1.0, float(data["confidence"])))
         self._validate_confidence(data["confidence"])
         self._validate_evaluation(data["evaluation"])
+        data["evidence_confidence"] = max(
+            0.0,
+            min(1.0, float(data["evidence_confidence"]))
+        )
         self._validate_string_list(data["evidence"], "evidence")
         self._validate_string_list(data["gaps"], "gaps")
         self._validate_string_list(data["recommendations"], "recommendations")
+        self._validate_status_consistency(data)
         return data
 
     def _validate_top_level(self, data: Dict[str, Any]):
@@ -102,3 +108,35 @@ class SchemaValidator:
         for i, item in enumerate(value):
             if not isinstance(item, str):
                 raise SchemaValidationError(f"{field_name}[{i}] must be a string")
+
+    def _validate_status_consistency(self, data: Dict[str, Any]):
+        status = data["status"]
+        evaluation = data["evaluation"]
+
+        no_evidence = (
+            evaluation["presence"] == "NO"
+            or evaluation["coverage"] == "NONE"
+            or evaluation["evidence_quality"] == "NONE"
+            or evaluation["correctness"] == "MISALIGNED"
+            or evaluation["traceability"] == "MISSING"
+        )
+
+        if status in {"COMPLIANT", "PARTIAL"} and no_evidence:
+            raise SchemaValidationError(
+                f"Status {status} is inconsistent with missing or misaligned evidence"
+            )
+
+        if status == "COMPLIANT":
+            required = {
+                "presence": "YES",
+                "coverage": "FULL",
+                "evidence_quality": "EXPLICIT",
+                "correctness": "ALIGNED",
+                "traceability": "CLEAR",
+            }
+
+            for field, expected in required.items():
+                if evaluation[field] != expected:
+                    raise SchemaValidationError(
+                        f"COMPLIANT requires evaluation.{field}={expected}"
+                    )

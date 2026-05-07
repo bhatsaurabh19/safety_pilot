@@ -4,6 +4,7 @@ pandas
 
 # PDF processing
 pymupdf
+pdfplumber
 
 # DOCX processing
 python-docx

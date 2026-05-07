@@ -3,83 +3,122 @@
   "retrieval": {
     "chunks": [
       {
-        "id": "chunk_41",
-        "text": "sable scenario catalog for future consistency, and\n\n\u2022 \na consolidated malfunction index to support downstream linkage. \nThis aligns with public Automotive SPICE guidance on consistency/traceability, \nevidence, work product management, and documented assessment processes. \n[vda-qmc.de] \nRecommended traceability fields (for your formal work product) \nIf you later put this into Word or Excel, add the following columns/metadata fields to make \nit audit-friendly:",
-        "score": 0.5685,
-        "metadata": {
-          "chunk_size": 462,
-          "chunk_id": "chunk_41",
-          "source_file": "HARA.pdf"
-        }
-      },
-      {
         "id": "chunk_0",
         "text": "Hazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]",
-        "score": 0.5644,
+        "score": 0.582,
         "metadata": {
           "chunk_size": 474,
           "chunk_id": "chunk_0",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.4596
       },
       {
-        "id": "chunk_30",
-        "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
-        "score": 0.5523,
+        "id": "chunk_41",
+        "text": "sable scenario catalog for future consistency, and\n\n\u2022 \na consolidated malfunction index to support downstream linkage. \nThis aligns with public Automotive SPICE guidance on consistency/traceability, \nevidence, work product management, and documented assessment processes. \n[vda-qmc.de] \nRecommended traceability fields (for your formal work product) \nIf you later put this into Word or Excel, add the following columns/metadata fields to make \nit audit-friendly:",
+        "score": 0.5967,
         "metadata": {
-          "chunk_size": 379,
-          "chunk_id": "chunk_30",
+          "chunk_size": 462,
+          "chunk_id": "chunk_41",
           "source_file": "HARA.pdf"
-        }
-      },
-      {
-        "id": "chunk_1",
-        "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
-        "score": 0.5502,
-        "metadata": {
-          "chunk_size": 293,
-          "chunk_id": "chunk_1",
-          "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.4438
       },
       {
         "id": "chunk_39",
         "text": "emy.com], \n[link.springer.com], [en.wikipedia.org]\n\n8) Traceability Notes for ISO 26262 and ASPICE CL3 Assessment Readiness \nTo support ISO 26262 traceability and ASPICE CL3-style assessment expectations, this \nHARA is structured so that each record contains:\n\n\u2022 \nunique ID for item, malfunction, scenario, and hazardous event,",
-        "score": 0.5433,
+        "score": 0.5698,
         "metadata": {
           "chunk_size": 327,
           "chunk_id": "chunk_39",
           "source_file": "HARA.pdf"
-        }
+        },
+        "rerank_score": 0.4249
+      },
+      {
+        "id": "chunk_1",
+        "text": "to support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA",
+        "score": 0.5659,
+        "metadata": {
+          "chunk_size": 293,
+          "chunk_id": "chunk_1",
+          "source_file": "HARA.pdf"
+        },
+        "rerank_score": 0.4222
+      },
+      {
+        "id": "chunk_30",
+        "text": "hs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required",
+        "score": 0.5752,
+        "metadata": {
+          "chunk_size": 379,
+          "chunk_id": "chunk_30",
+          "source_file": "HARA.pdf"
+        },
+        "rerank_score": 0.4157
       }
     ],
-    "avg_score": 0.5557,
-    "retrieval_confidence": "MEDIUM"
+    "avg_score": 0.5779,
+    "retrieval_confidence": "MEDIUM",
+    "evidence_analysis": {
+      "evidence_confidence": 0.4332,
+      "weak_evidence": true,
+      "reasons": [
+        "Low evidence confidence"
+      ]
+    },
+    "retrieval_attempts": [
+      {
+        "query": "General Topics for Product Development at System Level. Product development at the system level shall follow a structured lifecycle model. It shall ensure traceability from functional safety requirements to technical safety requirements and system design. The development process shall consider system architecture, interfaces, and integration aspects.",
+        "avg_score": 0.5557,
+        "retrieval_confidence": "MEDIUM",
+        "evidence_confidence": 0.4177,
+        "weak_evidence": true,
+        "reasons": [
+          "Low evidence confidence"
+        ]
+      },
+      {
+        "query": "Product development at the system level shall follow a structured lifecycle model. It shall ensure traceability from functional safety requirements to technical safety requirements and system design. The development process shall consider system architecture, interfaces, and integration aspects.",
+        "avg_score": 0.5779,
+        "retrieval_confidence": "MEDIUM",
+        "evidence_confidence": 0.4332,
+        "weak_evidence": true,
+        "reasons": [
+          "Low evidence confidence"
+        ]
+      },
+      {
+        "query": "General Topics for Product Development at System Level",
+        "avg_score": 0.5431,
+        "retrieval_confidence": "LOW",
+        "evidence_confidence": 0.4089,
+        "weak_evidence": true,
+        "reasons": [
+          "Low retrieval confidence",
+          "Low evidence confidence"
+        ]
+      }
+    ]
   },
-  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 4.5\n- Title: General Topics for Product Development at System Level\n- Description: Product development at the system level shall follow a structured lifecycle model. It shall ensure traceability from functional safety requirements to technical safety requirements and system design. The development process shall consider system architecture, interfaces, and integration aspects.\n\nRetrieved Evidence from Document:\ns\na\nb\nl\ne\n \ns\nc\ne\nn\na\nr\ni\no\n \nc\na\nt\na\nl\no\ng\n \nf\no\nr\n \nf\nu\nt\nu\nr\ne\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n,\n \na\nn\nd\n\n\n\n\n\u2022\n \n\n\na\n \nc\no\nn\ns\no\nl\ni\nd\na\nt\ne\nd\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \ni\nn\nd\ne\nx\n \nt\no\n \ns\nu\np\np\no\nr\nt\n \nd\no\nw\nn\ns\nt\nr\ne\na\nm\n \nl\ni\nn\nk\na\ng\ne\n.\n \n\n\nT\nh\ni\ns\n \na\nl\ni\ng\nn\ns\n \nw\ni\nt\nh\n \np\nu\nb\nl\ni\nc\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \ng\nu\ni\nd\na\nn\nc\ne\n \no\nn\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n/\nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \n\n\ne\nv\ni\nd\ne\nn\nc\ne\n,\n \nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n \nm\na\nn\na\ng\ne\nm\ne\nn\nt\n,\n \na\nn\nd\n \nd\no\nc\nu\nm\ne\nn\nt\ne\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \np\nr\no\nc\ne\ns\ns\ne\ns\n.\n \n\n\n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n \n\n\nR\ne\nc\no\nm\nm\ne\nn\nd\ne\nd\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nf\ni\ne\nl\nd\ns\n \n(\nf\no\nr\n \ny\no\nu\nr\n \nf\no\nr\nm\na\nl\n \nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n)\n \n\n\nI\nf\n \ny\no\nu\n \nl\na\nt\ne\nr\n \np\nu\nt\n \nt\nh\ni\ns\n \ni\nn\nt\no\n \nW\no\nr\nd\n \no\nr\n \nE\nx\nc\ne\nl\n,\n \na\nd\nd\n \nt\nh\ne\n \nf\no\nl\nl\no\nw\ni\nn\ng\n \nc\no\nl\nu\nm\nn\ns\n/\nm\ne\nt\na\nd\na\nt\na\n \nf\ni\ne\nl\nd\ns\n \nt\no\n \nm\na\nk\ne\n \n\n\ni\nt\n \na\nu\nd\ni\nt\n-\nf\nr\ni\ne\nn\nd\nl\ny\n:\n\n\n\n\nH\na\nz\na\nr\nd\n \nA\nn\na\nl\ny\ns\ni\ns\n \na\nn\nd\n \nR\ni\ns\nk\n \nA\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \n(\nH\nA\nR\nA\n)\n \n\n\nI\nt\ne\nm\n:\n \nA\nu\nt\no\nn\no\nm\no\nu\ns\n \nE\nm\ne\nr\ng\ne\nn\nc\ny\n \nB\nr\na\nk\ni\nn\ng\n \n(\nA\nE\nB\n)\n \nS\ny\ns\nt\ne\nm\n \n\n\nS\nt\na\nn\nd\na\nr\nd\n \nc\no\nn\nt\ne\nx\nt\n:\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n-\n3\n \nc\no\nn\nc\ne\np\nt\n \np\nh\na\ns\ne\n \nH\nA\nR\nA\n,\n \ns\nt\nr\nu\nc\nt\nu\nr\ne\nd\n \nf\no\nr\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \n\n\nr\ne\np\ne\na\nt\na\nb\ni\nl\ni\nt\ny\n,\n \na\nn\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ne\nx\np\ne\nc\nt\ne\nd\n \ni\nn\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \n/\n \nA\nS\nP\nI\nC\nE\n \n\n\ne\nn\nv\ni\nr\no\nn\nm\ne\nn\nt\ns\n.\n \nA\nu\nt\no\nm\no\nt\ni\nv\ne\n \nS\nP\nI\nC\nE\n \ng\nu\ni\nd\na\nn\nc\ne\n \ne\nx\np\nl\ni\nc\ni\nt\nl\ny\n \ne\nm\np\nh\na\ns\ni\nz\ne\ns\n \nc\no\nn\ns\ni\ns\nt\ne\nn\nc\ny\n \na\nn\nd\n \n\n\nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n,\n \nd\no\nc\nu\nm\ne\nn\nt\ne\nd\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \np\nr\no\nc\ne\ns\ns\ne\ns\n,\n \na\nn\nd\n \no\nb\nj\ne\nc\nt\ni\nv\ne\n \ne\nv\ni\nd\ne\nn\nc\ne\n/\nw\no\nr\nk\n \np\nr\no\nd\nu\nc\nt\n \n\n\nm\na\nn\na\ng\ne\nm\ne\nn\nt\n \nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\nh\ns\n.\no\nr\ng\n]\n,\n \n\n\n[\nr\no\na\nd\ns\na\nf\ne\nt\ny\n-\nd\ns\ns\n.\ne\nu\n]\n,\n \n\n\n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n6\n)\n \nC\no\nn\ns\no\nl\ni\nd\na\nt\ne\nd\n \nH\na\nz\na\nr\nd\n \nL\ni\ns\nt\n \nb\ny\n \nM\na\nl\nf\nu\nn\nc\nt\ni\no\nn\ni\nn\ng\n \nB\ne\nh\na\nv\ni\no\nr\n \n\n\nT\nh\ni\ns\n \ns\ne\nc\nt\ni\no\nn\n \nh\ne\nl\np\ns\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \nt\ne\na\nm\ns\n \nm\na\ni\nn\nt\na\ni\nn\n \no\nn\ne\n-\nt\no\n-\nm\na\nn\ny\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nb\ne\nt\nw\ne\ne\nn\n \n\n\nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n \nc\nl\na\ns\ns\ne\ns\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\ns\n,\n \nw\nh\ni\nc\nh\n \ni\ns\n \nu\ns\ne\nf\nu\nl\n \nf\no\nr\n \nb\no\nt\nh\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nw\no\nr\nk\n \n\n\np\nr\no\nd\nu\nc\nt\ns\n \na\nn\nd\n \nA\nS\nP\nI\nC\nE\n \ne\nv\ni\nd\ne\nn\nc\ne\n \ns\nt\nr\nu\nc\nt\nu\nr\ni\nn\ng\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n \n\n\nM\nB\n-\n0\n1\n:\n \nN\no\n \na\nu\nt\no\nn\no\nm\no\nu\ns\n \nb\nr\na\nk\ni\nn\ng\n \nw\nh\ne\nn\n \nb\nr\na\nk\ni\nn\ng\n \ni\ns\n \nr\ne\nq\nu\ni\nr\ne\nd\n\n\n\n\nt\no\n \ns\nu\np\np\no\nr\nt\n \nr\ne\np\nr\no\nd\nu\nc\ni\nb\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\ns\n.\n \n[\nv\nd\na\n-\nq\nm\nc\n.\nd\ne\n]\n\n\n\n\n1\n)\n \nD\no\nc\nu\nm\ne\nn\nt\n \nC\no\nn\nt\nr\no\nl\n \n/\n \nT\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nH\ne\na\nd\ne\nr\n\n\n\n\n\u2022\n \n\n\nI\nt\ne\nm\n \nR\ne\nv\ni\ns\ni\no\nn\n \nR\ne\nf\ne\nr\ne\nn\nc\ne\nd\n:\n \nR\ne\nv\n \nA\n \n(\nb\na\ns\ne\nd\n \no\nn\n \np\nr\ne\nv\ni\no\nu\ns\nl\ny\n \nd\ne\nf\ni\nn\ne\nd\n \nA\nE\nB\n \ni\nt\ne\nm\n \nd\ne\nf\ni\nn\ni\nt\ni\no\nn\n)\n\n\n\n\n\u2022\n \n\n\nA\nn\na\nl\ny\ns\ni\ns\n \nL\ne\nv\ne\nl\n:\n \nV\ne\nh\ni\nc\nl\ne\n-\nl\ne\nv\ne\nl\n \n/\n \nI\nt\ne\nm\n-\nl\ne\nv\ne\nl\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n \na\nn\na\nl\ny\ns\ni\ns\n\n\n\n\n\u2022\n \n\n\nS\nt\na\nt\nu\ns\n:\n \nP\nr\ne\nl\ni\nm\ni\nn\na\nr\ny\n \nc\no\nn\nc\ne\np\nt\n-\np\nh\na\ns\ne\n \nH\nA\nR\nA\n\n\n\n\ne\nm\ny\n.\nc\no\nm\n]\n,\n \n\n\n[\nl\ni\nn\nk\n.\ns\np\nr\ni\nn\ng\ne\nr\n.\nc\no\nm\n]\n,\n \n[\ne\nn\n.\nw\ni\nk\ni\np\ne\nd\ni\na\n.\no\nr\ng\n]\n\n\n\n\n8\n)\n \nT\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \nN\no\nt\ne\ns\n \nf\no\nr\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \na\nn\nd\n \nA\nS\nP\nI\nC\nE\n \nC\nL\n3\n \nA\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \nR\ne\na\nd\ni\nn\ne\ns\ns\n \n\n\nT\no\n \ns\nu\np\np\no\nr\nt\n \nI\nS\nO\n \n2\n6\n2\n6\n2\n \nt\nr\na\nc\ne\na\nb\ni\nl\ni\nt\ny\n \na\nn\nd\n \nA\nS\nP\nI\nC\nE\n \nC\nL\n3\n-\ns\nt\ny\nl\ne\n \na\ns\ns\ne\ns\ns\nm\ne\nn\nt\n \ne\nx\np\ne\nc\nt\na\nt\ni\no\nn\ns\n,\n \nt\nh\ni\ns\n \n\n\nH\nA\nR\nA\n \ni\ns\n \ns\nt\nr\nu\nc\nt\nu\nr\ne\nd\n \ns\no\n \nt\nh\na\nt\n \ne\na\nc\nh\n \nr\ne\nc\no\nr\nd\n \nc\no\nn\nt\na\ni\nn\ns\n:\n\n\n\n\n\u2022\n \n\n\nu\nn\ni\nq\nu\ne\n \nI\nD\n \nf\no\nr\n \ni\nt\ne\nm\n,\n \nm\na\nl\nf\nu\nn\nc\nt\ni\no\nn\n,\n \ns\nc\ne\nn\na\nr\ni\no\n,\n \na\nn\nd\n \nh\na\nz\na\nr\nd\no\nu\ns\n \ne\nv\ne\nn\nt\n,\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"4.5\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
-  "raw_response": "{\n  \"clause_id\": \"4.5\",\n  \"status\": \"PARTIAL\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [\n    [\n      \"s\"\n    ],\n    [\n      \"c\"\n    ],\n    [\n      \"e\"\n    ],\n    [\n      \"n\"\n    ],\n    [\n      \"a\"\n    ],\n    [\n      \"r\"\n    ],\n    [\n      \"i\"\n    ],\n    [\n      \"o\"\n    ]\n  ],\n  \"gaps\": [],\n  \"recommendations\": []\n}",
+  "prompt": "\nYou are an ISO 26262 compliance auditor operating in STRICT (audit-grade) mode.\n\nYour task is to evaluate whether a given document satisfies a specific ISO clause.\n\n---\n\nSTRICT RULES (MANDATORY):\n\n1. DO NOT assume or infer missing information.\n2. ONLY use the provided evidence.\n3. If evidence is missing or unclear \u2192 mark as NON_COMPLIANT.\n4. If evidence is partial or weak \u2192 mark as PARTIAL.\n5. If evidence is explicit, clear, and traceable \u2192 mark as COMPLIANT.\n6. Do NOT give benefit of doubt.\n7. Do NOT hallucinate or fabricate evidence.\n8. Return ONLY valid JSON (no explanations outside JSON).\n\n---\n\nISO PRINCIPLE:\n\nISO requirements use \"shall\" \u2192 meaning:\n- Requirements must be explicit\n- Requirements must be verifiable\n\nIf these are not satisfied \u2192 NON_COMPLIANT.\n\n---\n\nINPUT:\n\nISO Clause:\n- ID: 4.5\n- Title: General Topics for Product Development at System Level\n- Description: Product development at the system level shall follow a structured lifecycle model. It shall ensure traceability from functional safety requirements to technical safety requirements and system design. The development process shall consider system architecture, interfaces, and integration aspects.\n\nRetrieved Evidence from Document:\nHazard Analysis and Risk Assessment (HARA) \nItem: Autonomous Emergency Braking (AEB) System \nStandard context: ISO 26262-3 concept phase HARA, structured for traceability, \nrepeatability, and assessment evidence expected in Automotive SPICE / ASPICE \nenvironments. Automotive SPICE guidance explicitly emphasizes consistency and \ntraceability, documented assessment processes, and objective evidence/work product \nmanagement to support reproducible assessments. [vda-qmc.de]\n\nsable scenario catalog for future consistency, and\n\n\u2022 \na consolidated malfunction index to support downstream linkage. \nThis aligns with public Automotive SPICE guidance on consistency/traceability, \nevidence, work product management, and documented assessment processes. \n[vda-qmc.de] \nRecommended traceability fields (for your formal work product) \nIf you later put this into Word or Excel, add the following columns/metadata fields to make \nit audit-friendly:\n\nemy.com], \n[link.springer.com], [en.wikipedia.org]\n\n8) Traceability Notes for ISO 26262 and ASPICE CL3 Assessment Readiness \nTo support ISO 26262 traceability and ASPICE CL3-style assessment expectations, this \nHARA is structured so that each record contains:\n\n\u2022 \nunique ID for item, malfunction, scenario, and hazardous event,\n\nto support reproducible assessments. [vda-qmc.de]\n\n1) Document Control / Traceability Header\n\n\u2022 \nItem Revision Referenced: Rev A (based on previously defined AEB item definition)\n\n\u2022 \nAnalysis Level: Vehicle-level / Item-level hazardous event analysis\n\n\u2022 \nStatus: Preliminary concept-phase HARA\n\nhs.org], \n[roadsafety-dss.eu], \n[en.wikipedia.org]\n\n6) Consolidated Hazard List by Malfunctioning Behavior \nThis section helps assessment teams maintain one-to-many traceability between \nmalfunction classes and hazardous events, which is useful for both ISO 26262 work \nproducts and ASPICE evidence structuring. [vda-qmc.de] \nMB-01: No autonomous braking when braking is required\n\n---\n\nEVALUATION CRITERIA:\n\nAssess the document based on:\n\n- presence: YES / NO\n- coverage: FULL / PARTIAL / NONE\n- evidence_quality: EXPLICIT / IMPLICIT / WEAK / NONE\n- correctness: ALIGNED / PARTIAL / MISALIGNED\n- traceability: CLEAR / PARTIAL / MISSING\n\n---\n\nDECISION LOGIC (STRICT):\n\n- NO evidence \u2192 NON_COMPLIANT\n- WEAK or incomplete evidence \u2192 PARTIAL\n- CLEAR, explicit, traceable evidence \u2192 COMPLIANT\n- Clause not applicable \u2192 NOT_APPLICABLE (only if clearly justified)\n\n---\n\nOUTPUT FORMAT (STRICT JSON ONLY):\n\n{\n  \"clause_id\": \"4.5\",\n  \"status\": \"COMPLIANT | PARTIAL | NON_COMPLIANT | NOT_APPLICABLE\",\n  \"confidence\": 0.0,\n  \"evaluation\": {\n    \"presence\": \"\",\n    \"coverage\": \"\",\n    \"evidence_quality\": \"\",\n    \"correctness\": \"\",\n    \"traceability\": \"\"\n  },\n  \"evidence\": [],\n  \"gaps\": [],\n  \"recommendations\": []\n}\n",
+  "raw_response": "{\n  \"clause_id\": \"4.5\",\n  \"status\": \"COMPLIANT\",\n  \"confidence\": 1.0,\n  \"evaluation\": {\n    \"presence\": \"YES\",\n    \"coverage\": \"FULL\",\n    \"evidence_quality\": \"EXPlicit\",\n    \"correctness\": \"ALIGNED\",\n    \"traceability\": \"CLEAR\"\n  },\n  \"evidence\": [\n    {\n      \"id\": \"HARA Item: Autonomous Emergency Braking (AEB) System\",\n      \"description\": \"Standard context: ISO 26262-3 concept phase HARA, structured for traceability, repeatability, and assessment evidence expected in Automotive SPICE / ASPICE environments.\"\n    },\n    {\n      \"id\": \"VDA-QMC.de\",\n      \"description\": \"Automotive SPICE guidance explicitly emphasizes consistency and traceability, documented assessment processes, and objective evidence/work product management to support reproducible assessments.\"\n    },\n    {\n      \"id\": \"VDA-QMC.de\",\n      \"description\": \"Recommended traceability fields (for your formal work product) If you later put this into Word or Excel, add the following columns/metadata fields to make it audit-friendly:\"\n    },\n    {\n      \"id\": \"VDA-QMC.de\",\n      \"description\": \"8) Traceability Notes for ISO 26262 and ASPICE CL3 Assessment Readiness To support ISO 26262 traceability and ASPICE CL3-style assessment expectations, this HARA is structured so that each record contains:\"\n    },\n    {\n      \"id\": \"VDA-QMC.de\",\n      \"description\": \"6) Consolidated Hazard List by Malfunctioning Behavior This section helps assessment teams maintain one-to-many traceability between malfunction classes and hazardous events, which is useful for both ISO 26262 work products and ASPICE evidence structuring.\"\n    }\n  ],\n  \"gaps\": [],\n  \"recommendations\": []\n}",
   "validated_result": {
     "clause_id": "4.5",
     "status": "PARTIAL",
-    "confidence": 0.0,
+    "confidence": 0.4332,
     "evaluation": {
-      "presence": "NO",
-      "coverage": "NONE",
-      "evidence_quality": "NONE",
-      "correctness": "MISALIGNED",
-      "traceability": "MISSING"
+      "presence": "YES",
+      "coverage": "FULL",
+      "evidence_quality": "EXPLICIT",
+      "correctness": "ALIGNED",
+      "traceability": "CLEAR"
     },
-    "evidence": [
-      "s",
-      "c",
-      "e",
-      "n",
-      "a",
-      "r",
-      "i",
-      "o"
+    "evidence": [],
+    "gaps": [
+      "Low evidence confidence"
     ],
-    "gaps": [],
-    "recommendations": []
+    "recommendations": [],
+    "evidence_confidence": 0.4332
   }
 }

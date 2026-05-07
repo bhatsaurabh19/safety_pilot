@@ -101,7 +101,7 @@ def main():
 
     args = parser.parse_args()
 
-    print("\n🚀 Starting ISO Compliance Pipeline...\n")
+    print("\nStarting ISO Compliance Pipeline...\n")
 
     # ---------------------------------------------------------
     # 1. Load config
@@ -117,7 +117,7 @@ def main():
     iso_clauses = iso_part3 + iso_part4
 
     print(
-        f"📘 Loaded {len(iso_clauses)} ISO clauses "
+        f"Loaded {len(iso_clauses)} ISO clauses "
         f"(Part 3: {len(iso_part3)}, "
         f"Part 4: {len(iso_part4)})"
     )
@@ -125,14 +125,14 @@ def main():
     # ---------------------------------------------------------
     # 3. Extract document
     # ---------------------------------------------------------
-    print(f"\n📂 Reading: {args.input}")
+    print(f"\nReading: {args.input}")
 
     raw_text = extract_text(args.input)
 
     # ---------------------------------------------------------
     # 4. Clean text
     # ---------------------------------------------------------
-    print("🧹 Cleaning text...")
+    print("Cleaning text...")
 
     cleaned_text = clean_text(raw_text)
 
@@ -140,7 +140,7 @@ def main():
     # 5. Chunk text
     # ---------------------------------------------------------
     print(
-        f"✂️ Chunking "
+        f"Chunking "
         f"(size={args.chunk_size}, overlap={args.overlap})..."
     )
 
@@ -150,14 +150,14 @@ def main():
         overlap=args.overlap
     )
 
-    print(f"📄 Generated {len(chunks)} chunks")
+    print(f"Generated {len(chunks)} chunks")
 
     # ---------------------------------------------------------
     # 6. Optional debug save
     # ---------------------------------------------------------
     if args.save_chunks:
         save_debug_chunks(chunks)
-        print("📝 Saved debug chunks → debug/chunks.json")
+        print("Saved debug chunks to debug/chunks.json")
 
     # ---------------------------------------------------------
     # 7. Prepare chunk texts + metadata
@@ -187,7 +187,7 @@ def main():
     # ---------------------------------------------------------
     # 9. Embed chunks
     # ---------------------------------------------------------
-    print("\n🔗 Embedding document...")
+    print("\nEmbedding document...")
 
     embeddings = embedder.embed_texts(chunk_texts)
 
@@ -210,7 +210,8 @@ def main():
     retriever = Retriever(
         embedder=embedder,
         vectorstore=vectorstore,
-        top_k=config["retrieval"]["top_k"]
+        top_k=config["retrieval"]["top_k"],
+        similarity_threshold=config["retrieval"].get("min_score", 0.35)
     )
 
     # ---------------------------------------------------------
@@ -229,10 +230,15 @@ def main():
     evaluator = Evaluator(
         retriever=retriever,
         llm=llm,
-        schema_validator=SchemaValidator()
+        schema_validator=SchemaValidator(),
+        max_evidence_retries=config["evaluation"].get("evidence_retries", 1),
+        weak_evidence_threshold=config["evaluation"].get(
+            "weak_evidence_threshold",
+            0.45
+        )
     )
 
-    print("\n🧠 Running clause-by-clause evaluation...\n")
+    print("\nRunning clause-by-clause evaluation...\n")
 
     results = evaluator.evaluate(iso_clauses)
 
@@ -253,7 +259,7 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(final_report, f, indent=2)
 
-    print(f"\n✅ Compliance report generated: {output_path}")
+    print(f"\nCompliance report generated: {output_path}")
 
 
 # ---------------------------------------------------------

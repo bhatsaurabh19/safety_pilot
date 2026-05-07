@@ -1,3 +1,6 @@
+from typing import Iterable
+
+
 class PromptBuilder:
     def __init__(self):
         self.template = self._load_template()
@@ -90,7 +93,7 @@ OUTPUT FORMAT (STRICT JSON ONLY):
         clause_id: str,
         clause_title: str,
         clause_text: str,
-        retrieved_chunks: list[str],
+        retrieved_chunks: str | Iterable[str],
     ) -> str:
         """
         Builds the final prompt by injecting clause data and retrieved evidence.
@@ -98,7 +101,10 @@ OUTPUT FORMAT (STRICT JSON ONLY):
         No logic. No transformation. Just formatting.
         """
 
-        evidence_text = "\n".join(retrieved_chunks)
+        if isinstance(retrieved_chunks, str):
+            evidence_text = retrieved_chunks
+        else:
+            evidence_text = "\n\n".join(retrieved_chunks)
 
         return self.template.format(
             clause_id=clause_id,
