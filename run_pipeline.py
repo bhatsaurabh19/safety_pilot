@@ -28,8 +28,13 @@ from src.vectorstore.faiss_store import FAISSStore
 from src.retrieval.retriever import Retriever
 
 # -----------------------------
-# Evaluation
+# Agents / Evaluation
 # -----------------------------
+from src.agents.audit_agent import AuditAgent
+from src.agents.report_agent import ReportAgent
+from src.agents.retrieval_agent import RetrievalAgent
+from src.agents.risk_agent import RiskAgent
+from src.agents.traceability_agent import TraceabilityAgent
 from src.evaluation.evaluator import Evaluator
 from src.evaluation.schema import SchemaValidator
 
@@ -37,6 +42,7 @@ from src.evaluation.schema import SchemaValidator
 # Aggregation
 # -----------------------------
 from src.aggregation.aggregator import Aggregator
+from src.remediation.remediator import RemediationAgent
 
 
 # ---------------------------------------------------------
@@ -225,12 +231,10 @@ def main():
     )
 
     # ---------------------------------------------------------
-    # 13. Evaluator
+    # 13. Agents
     # ---------------------------------------------------------
-    evaluator = Evaluator(
+    retrieval_agent = RetrievalAgent(
         retriever=retriever,
-        llm=llm,
-        schema_validator=SchemaValidator(),
         max_evidence_retries=config["evaluation"].get("evidence_retries", 1),
         weak_evidence_threshold=config["evaluation"].get(
             "weak_evidence_threshold",
@@ -238,16 +242,48 @@ def main():
         )
     )
 
+    evaluator = Evaluator(
+        retriever=retriever,
+        llm=llm,
+        schema_validator=SchemaValidator(),
+        retrieval_agent=retrieval_agent
+    )
+
+    audit_agent = AuditAgent(evaluator=evaluator)
+    risk_agent = RiskAgent()
+    traceability_agent = TraceabilityAgent()
+    remediation_agent = RemediationAgent()
+    report_agent = ReportAgent(
+        aggregator=Aggregator(),
+        risk_agent=risk_agent,
+        remediation_agent=remediation_agent,
+        traceability_agent=traceability_agent,
+    )
+
     print("\nRunning clause-by-clause evaluation...\n")
 
-    results = evaluator.evaluate(iso_clauses)
+    audit_run = audit_agent.evaluate(iso_clauses)
+    results = audit_run["results"]
 
     # ---------------------------------------------------------
-    # 14. Aggregate results
+    # 14. Build report
     # ---------------------------------------------------------
-    aggregator = Aggregator()
-
-    final_report = aggregator.aggregate(results)
+    final_report = report_agent.build(
+        results=results,
+        clauses=iso_clauses,
+        agent_trace=[
+            {
+                "agent": "retrieval_agent",
+                "status": "completed",
+                "max_evidence_retries": retrieval_agent.max_evidence_retries,
+            },
+            {
+                "agent": audit_run["agent"],
+                "status": audit_run["status"],
+                "clauses_evaluated": audit_run["clauses_evaluated"],
+            },
+        ],
+    )
 
     # ---------------------------------------------------------
     # 15. Save report

@@ -18,24 +18,23 @@
       "count": 3
     },
     {
-      "gap": "Explicit rationale text for each classification",
+      "gap": "explicit rationale text for each classification",
       "count": 1
     },
     {
-      "gap": "Document-level assumptions that can be version-controlled",
+      "gap": "document-level assumptions that can be version-controlled",
       "count": 1
     },
     {
-      "gap": "Reusable scenario catalog for future consistency",
+      "gap": "a reusable scenario catalog for future consistency",
       "count": 1
-    }
-  ],
-  "top_recommendations": [
+    },
     {
-      "recommendation": "Provide an explicit safety validation process",
+      "gap": "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.",
       "count": 1
     }
   ],
+  "top_recommendations": [],
   "clause_results": [
     {
       "clause_id": "3.5",
@@ -92,9 +91,9 @@
         "hs.org"
       ],
       "gaps": [
-        "Explicit rationale text for each classification",
-        "Document-level assumptions that can be version-controlled",
-        "Reusable scenario catalog for future consistency",
+        "explicit rationale text for each classification",
+        "document-level assumptions that can be version-controlled",
+        "a reusable scenario catalog for future consistency",
         "Low evidence confidence",
         "Status downgraded because evaluation fields show missing or misaligned evidence"
       ],
@@ -130,7 +129,9 @@
         "correctness": "PARTIAL",
         "traceability": "CLEAR"
       },
-      "evidence": [],
+      "evidence": [
+        "Analysis of HARA principle in ISO 26262 concept-phase work."
+      ],
       "gaps": [
         "Low evidence confidence",
         "Status downgraded because evaluation fields show missing or misaligned evidence"
@@ -168,18 +169,663 @@
         "traceability": "CLEAR"
       },
       "evidence": [
-        "https://s....ations.gov",
-        "https://iihs.org",
-        "https://roadsafety-dss.eu"
+        "https://s....ations.gov"
       ],
       "gaps": [
+        "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.",
         "Low evidence confidence",
         "Status downgraded because evaluation fields show missing or misaligned evidence"
       ],
-      "recommendations": [
-        "Provide an explicit safety validation process"
-      ],
+      "recommendations": [],
       "evidence_confidence": 0.4474
+    }
+  ],
+  "risk": {
+    "summary": {
+      "total_risks": 5,
+      "high": 3,
+      "medium": 2,
+      "low": 0
+    },
+    "risk_items": [
+      {
+        "clause_id": "4.6",
+        "status": "NON_COMPLIANT",
+        "risk_level": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4205,
+        "drivers": [
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence",
+          "Evidence confidence below audit threshold"
+        ]
+      },
+      {
+        "clause_id": "3.7",
+        "status": "NON_COMPLIANT",
+        "risk_level": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4341,
+        "drivers": [
+          "explicit rationale text for each classification",
+          "document-level assumptions that can be version-controlled",
+          "a reusable scenario catalog for future consistency",
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence",
+          "Evidence confidence below audit threshold"
+        ]
+      },
+      {
+        "clause_id": "4.8",
+        "status": "NON_COMPLIANT",
+        "risk_level": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4474,
+        "drivers": [
+          "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.",
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence",
+          "Evidence confidence below audit threshold"
+        ]
+      },
+      {
+        "clause_id": "4.7",
+        "status": "PARTIAL",
+        "risk_level": "MEDIUM",
+        "confidence": 0.4234,
+        "evidence_confidence": 0.4234,
+        "drivers": [
+          "Low evidence confidence",
+          "Evidence confidence below audit threshold"
+        ]
+      },
+      {
+        "clause_id": "4.5",
+        "status": "PARTIAL",
+        "risk_level": "MEDIUM",
+        "confidence": 0.4332,
+        "evidence_confidence": 0.4332,
+        "drivers": [
+          "Low evidence confidence",
+          "Evidence confidence below audit threshold"
+        ]
+      }
+    ]
+  },
+  "remediation": {
+    "summary": {
+      "total_plans": 5,
+      "high_priority": 3,
+      "medium_priority": 2,
+      "low_priority": 0
+    },
+    "plans": [
+      {
+        "clause_id": "4.8",
+        "title": "Safety Validation",
+        "status": "NON_COMPLIANT",
+        "priority": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4474,
+        "gaps": [
+          "Validation shall be performed at vehicle level and ensure that the system fulfills functional safety requirements under real operating conditions.",
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence"
+        ],
+        "missing_artifacts": [
+          "Safety validation plan",
+          "Vehicle-level validation report"
+        ],
+        "remediation_steps": [
+          "Address each recorded gap with explicit, reviewable evidence.",
+          "Create or update the Safety Validation work product.",
+          "Add clause references and stable artifact identifiers.",
+          "Link each requirement to objective evidence and verification status.",
+          "Re-run the compliance pipeline and review the clause audit log."
+        ],
+        "traceability_structure": [
+          "Functional safety requirement",
+          "Technical safety requirement",
+          "System architecture element",
+          "Safety mechanism",
+          "Integration or validation test"
+        ]
+      },
+      {
+        "clause_id": "3.7",
+        "title": "Functional Safety Concept",
+        "status": "NON_COMPLIANT",
+        "priority": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4341,
+        "gaps": [
+          "explicit rationale text for each classification",
+          "document-level assumptions that can be version-controlled",
+          "a reusable scenario catalog for future consistency",
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence"
+        ],
+        "missing_artifacts": [
+          "Functional safety concept",
+          "Functional safety requirements"
+        ],
+        "remediation_steps": [
+          "Address each recorded gap with explicit, reviewable evidence.",
+          "Create or update the Functional Safety Concept work product.",
+          "Add clause references and stable artifact identifiers.",
+          "Link each requirement to objective evidence and verification status.",
+          "Re-run the compliance pipeline and review the clause audit log."
+        ],
+        "traceability_structure": [
+          "Item definition",
+          "Hazardous event",
+          "Safety goal",
+          "ASIL",
+          "Functional safety requirement"
+        ]
+      },
+      {
+        "clause_id": "4.6",
+        "title": "Technical Safety Concept",
+        "status": "NON_COMPLIANT",
+        "priority": "HIGH",
+        "confidence": 0.2,
+        "evidence_confidence": 0.4205,
+        "gaps": [
+          "Low evidence confidence",
+          "Status downgraded because evaluation fields show missing or misaligned evidence"
+        ],
+        "missing_artifacts": [
+          "Technical safety concept",
+          "Technical safety requirements"
+        ],
+        "remediation_steps": [
+          "Address each recorded gap with explicit, reviewable evidence.",
+          "Create or update the Technical Safety Concept work product.",
+          "Add clause references and stable artifact identifiers.",
+          "Link each requirement to objective evidence and verification status.",
+          "Re-run the compliance pipeline and review the clause audit log."
+        ],
+        "traceability_structure": [
+          "Functional safety requirement",
+          "Technical safety requirement",
+          "System architecture element",
+          "Safety mechanism",
+          "Integration or validation test"
+        ]
+      },
+      {
+        "clause_id": "4.5",
+        "title": "General Topics for Product Development at System Level",
+        "status": "PARTIAL",
+        "priority": "MEDIUM",
+        "confidence": 0.4332,
+        "evidence_confidence": 0.4332,
+        "gaps": [
+          "Low evidence confidence"
+        ],
+        "missing_artifacts": [
+          "System development plan",
+          "System architecture description",
+          "TSR traceability matrix",
+          "Integration strategy"
+        ],
+        "remediation_steps": [
+          "Address each recorded gap with explicit, reviewable evidence.",
+          "Create or update the General Topics for Product Development at System Level work product.",
+          "Add clause references and stable artifact identifiers.",
+          "Link each requirement to objective evidence and verification status.",
+          "Re-run the compliance pipeline and review the clause audit log."
+        ],
+        "traceability_structure": [
+          "Functional safety requirement",
+          "Technical safety requirement",
+          "System architecture element",
+          "Safety mechanism",
+          "Integration or validation test"
+        ]
+      },
+      {
+        "clause_id": "4.7",
+        "title": "System and Item Integration and Testing",
+        "status": "PARTIAL",
+        "priority": "MEDIUM",
+        "confidence": 0.4234,
+        "evidence_confidence": 0.4234,
+        "gaps": [
+          "Low evidence confidence"
+        ],
+        "missing_artifacts": [
+          "System integration test plan",
+          "Hardware/software integration evidence",
+          "Fault injection test results",
+          "Safety mechanism verification report"
+        ],
+        "remediation_steps": [
+          "Address each recorded gap with explicit, reviewable evidence.",
+          "Create or update the System and Item Integration and Testing work product.",
+          "Add clause references and stable artifact identifiers.",
+          "Link each requirement to objective evidence and verification status.",
+          "Re-run the compliance pipeline and review the clause audit log."
+        ],
+        "traceability_structure": [
+          "Functional safety requirement",
+          "Technical safety requirement",
+          "System architecture element",
+          "Safety mechanism",
+          "Integration or validation test"
+        ]
+      }
+    ]
+  },
+  "traceability": {
+    "safety_goal_to_tsr": {
+      "mapping_count": 4,
+      "mappings": [
+        {
+          "source_clause": "3.7",
+          "target_clause": "4.5",
+          "status": "BLOCKED_BY_SAFETY_GOAL",
+          "source_status": "NON_COMPLIANT",
+          "target_status": "PARTIAL"
+        },
+        {
+          "source_clause": "3.7",
+          "target_clause": "4.6",
+          "status": "BLOCKED_BY_SAFETY_GOAL",
+          "source_status": "NON_COMPLIANT",
+          "target_status": "NON_COMPLIANT"
+        },
+        {
+          "source_clause": "3.7",
+          "target_clause": "4.7",
+          "status": "BLOCKED_BY_SAFETY_GOAL",
+          "source_status": "NON_COMPLIANT",
+          "target_status": "PARTIAL"
+        },
+        {
+          "source_clause": "3.7",
+          "target_clause": "4.8",
+          "status": "BLOCKED_BY_SAFETY_GOAL",
+          "source_status": "NON_COMPLIANT",
+          "target_status": "NON_COMPLIANT"
+        }
+      ]
+    },
+    "traceability_graph": {
+      "nodes": [
+        {
+          "id": "clause:3.5",
+          "type": "clause",
+          "label": "Item Definition",
+          "status": "COMPLIANT",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:item_definition",
+          "type": "trace_target",
+          "label": "item_definition"
+        },
+        {
+          "id": "clause:3.6",
+          "type": "clause",
+          "label": "Hazard Analysis and Risk Assessment (HARA)",
+          "status": "COMPLIANT",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:hazardous_event",
+          "type": "trace_target",
+          "label": "hazardous_event"
+        },
+        {
+          "id": "trace_target:asil",
+          "type": "trace_target",
+          "label": "asil"
+        },
+        {
+          "id": "trace_target:safety_goal",
+          "type": "trace_target",
+          "label": "safety_goal"
+        },
+        {
+          "id": "clause:3.7",
+          "type": "clause",
+          "label": "Functional Safety Concept",
+          "status": "NON_COMPLIANT",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:functional_safety_requirement",
+          "type": "trace_target",
+          "label": "functional_safety_requirement"
+        },
+        {
+          "id": "clause:4.5",
+          "type": "clause",
+          "label": "General Topics for Product Development at System Level",
+          "status": "PARTIAL",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:technical_safety_requirement",
+          "type": "trace_target",
+          "label": "technical_safety_requirement"
+        },
+        {
+          "id": "clause:4.6",
+          "type": "clause",
+          "label": "Technical Safety Concept",
+          "status": "NON_COMPLIANT",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:system_architecture",
+          "type": "trace_target",
+          "label": "system_architecture"
+        },
+        {
+          "id": "trace_target:safety_mechanism",
+          "type": "trace_target",
+          "label": "safety_mechanism"
+        },
+        {
+          "id": "clause:4.7",
+          "type": "clause",
+          "label": "System and Item Integration and Testing",
+          "status": "PARTIAL",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:integration_test",
+          "type": "trace_target",
+          "label": "integration_test"
+        },
+        {
+          "id": "clause:4.8",
+          "type": "clause",
+          "label": "Safety Validation",
+          "status": "NON_COMPLIANT",
+          "coverage": "FULL"
+        },
+        {
+          "id": "trace_target:validation_test",
+          "type": "trace_target",
+          "label": "validation_test"
+        }
+      ],
+      "edges": [
+        {
+          "source": "clause:3.5",
+          "target": "trace_target:item_definition",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.6",
+          "target": "trace_target:hazardous_event",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.6",
+          "target": "trace_target:asil",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.6",
+          "target": "trace_target:safety_goal",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.7",
+          "target": "trace_target:safety_goal",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.7",
+          "target": "trace_target:functional_safety_requirement",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.5",
+          "target": "trace_target:functional_safety_requirement",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.5",
+          "target": "trace_target:technical_safety_requirement",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.6",
+          "target": "trace_target:technical_safety_requirement",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.6",
+          "target": "trace_target:system_architecture",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.6",
+          "target": "trace_target:safety_mechanism",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.7",
+          "target": "trace_target:technical_safety_requirement",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.7",
+          "target": "trace_target:integration_test",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.8",
+          "target": "trace_target:safety_goal",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:4.8",
+          "target": "trace_target:validation_test",
+          "type": "expects_trace_to"
+        },
+        {
+          "source": "clause:3.5",
+          "target": "clause:3.6",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:3.5",
+          "target": "clause:3.7",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:3.6",
+          "target": "clause:3.7",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:3.7",
+          "target": "clause:4.5",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:3.7",
+          "target": "clause:4.6",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:4.5",
+          "target": "clause:4.6",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:4.6",
+          "target": "clause:4.7",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:3.7",
+          "target": "clause:4.8",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:4.6",
+          "target": "clause:4.8",
+          "type": "feeds"
+        },
+        {
+          "source": "clause:4.7",
+          "target": "clause:4.8",
+          "type": "feeds"
+        }
+      ]
+    },
+    "coverage_analysis": {
+      "expected_links": 15,
+      "covered_links": 6,
+      "coverage_ratio": 0.4,
+      "by_clause": [
+        {
+          "clause_id": "3.5",
+          "expected_links": 1,
+          "covered_links": 1,
+          "coverage_ratio": 1.0,
+          "status": "COMPLIANT"
+        },
+        {
+          "clause_id": "3.6",
+          "expected_links": 3,
+          "covered_links": 3,
+          "coverage_ratio": 1.0,
+          "status": "COMPLIANT"
+        },
+        {
+          "clause_id": "3.7",
+          "expected_links": 2,
+          "covered_links": 0,
+          "coverage_ratio": 0.0,
+          "status": "NON_COMPLIANT"
+        },
+        {
+          "clause_id": "4.5",
+          "expected_links": 2,
+          "covered_links": 1,
+          "coverage_ratio": 0.5,
+          "status": "PARTIAL"
+        },
+        {
+          "clause_id": "4.6",
+          "expected_links": 3,
+          "covered_links": 0,
+          "coverage_ratio": 0.0,
+          "status": "NON_COMPLIANT"
+        },
+        {
+          "clause_id": "4.7",
+          "expected_links": 2,
+          "covered_links": 1,
+          "coverage_ratio": 0.5,
+          "status": "PARTIAL"
+        },
+        {
+          "clause_id": "4.8",
+          "expected_links": 2,
+          "covered_links": 0,
+          "coverage_ratio": 0.0,
+          "status": "NON_COMPLIANT"
+        }
+      ]
+    },
+    "dependency_validation": {
+      "valid": false,
+      "issue_count": 7,
+      "issues": [
+        {
+          "clause_id": "4.5",
+          "dependency": "3.7",
+          "issue": "Dependency is NON_COMPLIANT",
+          "severity": "HIGH"
+        },
+        {
+          "clause_id": "4.6",
+          "dependency": "3.7",
+          "issue": "Dependency is NON_COMPLIANT",
+          "severity": "HIGH"
+        },
+        {
+          "clause_id": "4.6",
+          "dependency": "4.5",
+          "issue": "Dependency is PARTIAL",
+          "severity": "MEDIUM"
+        },
+        {
+          "clause_id": "4.7",
+          "dependency": "4.6",
+          "issue": "Dependency is NON_COMPLIANT",
+          "severity": "HIGH"
+        },
+        {
+          "clause_id": "4.8",
+          "dependency": "3.7",
+          "issue": "Dependency is NON_COMPLIANT",
+          "severity": "HIGH"
+        },
+        {
+          "clause_id": "4.8",
+          "dependency": "4.6",
+          "issue": "Dependency is NON_COMPLIANT",
+          "severity": "HIGH"
+        },
+        {
+          "clause_id": "4.8",
+          "dependency": "4.7",
+          "issue": "Dependency is PARTIAL",
+          "severity": "MEDIUM"
+        }
+      ]
+    }
+  },
+  "agent_trace": [
+    {
+      "agent": "retrieval_agent",
+      "status": "completed",
+      "max_evidence_retries": 2
+    },
+    {
+      "agent": "audit_agent",
+      "status": "completed",
+      "clauses_evaluated": 7
+    },
+    {
+      "agent": "risk_agent",
+      "status": "completed",
+      "risks_found": 5
+    },
+    {
+      "agent": "remediation_agent",
+      "status": "completed",
+      "plans_generated": 5
+    },
+    {
+      "agent": "traceability_agent",
+      "status": "completed",
+      "dependency_issues": 7
+    },
+    {
+      "agent": "report_agent",
+      "status": "completed",
+      "sections": [
+        "summary",
+        "top_gaps",
+        "top_recommendations",
+        "clause_results",
+        "risk",
+        "remediation",
+        "traceability",
+        "agent_trace"
+      ]
     }
   ]
 }

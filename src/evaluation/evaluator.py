@@ -2,7 +2,7 @@ import json
 import time
 from typing import List, Dict, Any
 
-from src.evaluation.evidence import EvidenceAnalyzer
+from src.agents.retrieval_agent import RetrievalAgent
 from src.evaluation.prompt_builder import PromptBuilder
 
 
@@ -14,14 +14,16 @@ class Evaluator:
         schema_validator,
         max_evidence_retries=1,
         weak_evidence_threshold=0.45,
+        retrieval_agent=None,
     ):
         self.retriever = retriever
         self.llm = llm
         self.schema_validator = schema_validator
         self.prompt_builder = PromptBuilder()
-        self.max_evidence_retries = max_evidence_retries
-        self.evidence_analyzer = EvidenceAnalyzer(
-            weak_threshold=weak_evidence_threshold
+        self.retrieval_agent = retrieval_agent or RetrievalAgent(
+            retriever=retriever,
+            max_evidence_retries=max_evidence_retries,
+            weak_evidence_threshold=weak_evidence_threshold,
         )
 
     # -------------------------------------------------
@@ -114,77 +116,15 @@ class Evaluator:
                 ]
             }
 
-    def _build_retrieval_queries(
-        self,
-        clause_title: str,
-        clause_text: str,
-    ) -> List[str]:
-        return [
-            f"{clause_title}. {clause_text}",
-            clause_text,
-            clause_title,
-        ]
-
     def _retrieve_evidence(
         self,
         clause_title: str,
         clause_text: str,
     ) -> Dict[str, Any]:
-        best_result = None
-        best_analysis = None
-        attempts = []
-
-        queries = self._build_retrieval_queries(clause_title, clause_text)
-        max_attempts = min(len(queries), self.max_evidence_retries + 1)
-
-        for query in queries[:max_attempts]:
-            retrieval_result = self.retriever.get_relevant_chunks(query)
-            retrieval_result = self.evidence_analyzer.rerank(
-                clause_title=clause_title,
-                clause_text=clause_text,
-                retrieval_result=retrieval_result,
-            )
-            analysis = self.evidence_analyzer.analyze(
-                clause_title=clause_title,
-                clause_text=clause_text,
-                retrieval_result=retrieval_result,
-            )
-
-            attempts.append({
-                "query": query,
-                "avg_score": retrieval_result.get("avg_score", 0.0),
-                "retrieval_confidence": retrieval_result.get(
-                    "retrieval_confidence",
-                    "LOW",
-                ),
-                "evidence_confidence": analysis["evidence_confidence"],
-                "weak_evidence": analysis["weak_evidence"],
-                "reasons": analysis["reasons"],
-            })
-
-            if (
-                best_analysis is None
-                or analysis["evidence_confidence"]
-                > best_analysis["evidence_confidence"]
-            ):
-                best_result = retrieval_result
-                best_analysis = analysis
-
-            if not analysis["weak_evidence"]:
-                break
-
-        if best_result is None:
-            best_result = self.retriever._empty_result()
-            best_analysis = self.evidence_analyzer.analyze(
-                clause_title=clause_title,
-                clause_text=clause_text,
-                retrieval_result=best_result,
-            )
-
-        best_result["evidence_analysis"] = best_analysis
-        best_result["retrieval_attempts"] = attempts
-
-        return best_result
+        return self.retrieval_agent.retrieve(
+            clause_title=clause_title,
+            clause_text=clause_text,
+        )
 
     def _apply_evidence_constraints(
         self,
